@@ -2,7 +2,7 @@ package evalInicial.ejercicio2.interfaces;
 
 public interface ITicket {
 		
-	// Function used to get the vehicle type.
+	// Function used to find the vehicle type.
 	public boolean isSpecialVehicle();
 	
 	// Fetch the discount if any.

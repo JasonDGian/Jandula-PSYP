@@ -43,11 +43,11 @@ public class GenericTicket extends Ticket {
 
 	@Override
 	public String toString() {
-		return "GenericTicket [entryKm=" + this.getEntryKm() + ", exitKm=" + this.getExitKm() + ", kmPrice=" + this.getKmPrice()
-				+ ", isSpecialVehicle()=" + isSpecialVehicle() + ", fetchDiscountMultiplier()="
+		return " - - GenericTicket - - \nentryKm=" + this.getEntryKm() + "\nexitKm=" + this.getExitKm() + "\nkmPrice=" + this.getKmPrice()
+				+ "\nisSpecialVehicle()=" + isSpecialVehicle() + "\nfetchDiscountMultiplier()="
 				+ fetchDiscountMultiplier() + ", calculateDiscount()=" + calculateDiscount()
-				+ ", calculateDiscountedFee()=" + calculateDiscountedFee() + ", getTraveledDistance()="
-				+ getTraveledDistance() + ", calculatePlaneFee()=" + calculatePlaneFee() + "]";
+				+ "\ncalculateDiscountedFee()=" + calculateDiscountedFee() + "\ngetTraveledDistance()="
+				+ getTraveledDistance() + "\ncalculatePlaneFee()=" + calculatePlaneFee();
 	}
 
 }

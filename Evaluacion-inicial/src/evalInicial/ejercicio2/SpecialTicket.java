@@ -43,11 +43,11 @@ public class SpecialTicket extends Ticket {
 	@Override
 	// Returns a string representation of the ticket object.
 	public String toString() {
-		return "SpecialTicket [entryKm=" + this.getEntryKm() + ", exitKm=" + this.getExitKm() + ", kmPrice=" + this.getKmPrice()
-				+ ", isSpecialVehicle()=" + isSpecialVehicle() + ", fetchDiscountMultiplier()="
-				+ fetchDiscountMultiplier() + ", calculateDiscount()=" + calculateDiscount()
-				+ ", getTraveledDistance()=" + getTraveledDistance() + ", calculatePlaneFee()=" + calculatePlaneFee()
-				+ ", calculateDiscountedFee()=" + calculateDiscountedFee() + "]";
+		return " - - SpecialTicket - -  \nentryKm=" + this.getEntryKm() + "\nexitKm=" + this.getExitKm() + "\nkmPrice=" + this.getKmPrice()
+				+ "\n isSpecialVehicle()=" + isSpecialVehicle() + "\nfetchDiscountMultiplier()="
+				+ fetchDiscountMultiplier() + "\ncalculateDiscount()=" + calculateDiscount()
+				+ "\ngetTraveledDistance()=" + getTraveledDistance() + "\ncalculatePlaneFee()=" + calculatePlaneFee()
+				+ "\ncalculateDiscountedFee()=" + calculateDiscountedFee();
 	}
 
 }
