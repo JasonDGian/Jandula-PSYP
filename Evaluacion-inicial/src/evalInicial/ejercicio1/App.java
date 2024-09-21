@@ -3,17 +3,21 @@ package evalInicial.ejercicio1;
 import evalInicial.ejercicio1.excepciones.WordException;
 import evalInicial.ejercicio1.excepciones.WordSearchSizeException;
 
-public class App {
+public class App
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
-		try {
+		try
+		{
 
 			// Genera la sopa de letras.
 			WordSearch sopa = new WordSearch(10);
 
 			// Coloca palabras en la sopa.
-			try {
+			try
+			{
 				sopa.colocarPalabraVertical("Conocer", new Coordinate(0, 0), false);
 				sopa.colocarPalabraVertical("Formacion", new Coordinate(1, 1), false);
 				sopa.colocarPalabraHorizontal("Caracter", new Coordinate(0, 0), false);
@@ -28,7 +32,8 @@ public class App {
 				sopa.colocarPalabraHorizontal("Roca", new Coordinate(5, 4), true);
 				sopa.colocarPalabraVertical("Sorpresa", new Coordinate(0, 9), false);
 
-			} catch (WordException e) {
+			} catch (WordException e)
+			{
 				System.out.println(e.getMessage());
 
 			}
@@ -50,7 +55,8 @@ public class App {
 			// Muestra la sopa (una vez cargada.)
 			System.out.println(sopa2);
 
-		} catch (WordSearchSizeException e) {
+		} catch (WordSearchSizeException e)
+		{
 			System.out.println(e.getMessage());
 		}
 

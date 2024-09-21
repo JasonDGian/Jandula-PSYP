@@ -7,7 +7,8 @@ import evalInicial.ejercicio2.interfaces.ITicket;
  * requirements for a ticket object. Implements the ITicket interface for main
  * logic.
  */
-public abstract class Ticket implements ITicket {
+public abstract class Ticket implements ITicket
+{
 
 	// Vehicle's entry kilometer point.
 	private int entryKm;
@@ -19,37 +20,45 @@ public abstract class Ticket implements ITicket {
 	private double kmPrice;
 
 	// Public access methods.
-	public int getEntryKm() {
+	public int getEntryKm()
+	{
 		return entryKm;
 	}
 
-	public void setEntryKm(int entryKm) {
+	public void setEntryKm(int entryKm)
+	{
 		this.entryKm = entryKm;
 	}
 
-	public int getExitKm() {
+	public int getExitKm()
+	{
 		return exitKm;
 	}
 
-	public void setExitKm(int exitKm) {
+	public void setExitKm(int exitKm)
+	{
 		this.exitKm = exitKm;
 	}
 
-	public double getKmPrice() {
+	public double getKmPrice()
+	{
 		return kmPrice;
 	}
 
-	public void setKmPrice(double kmPrice) {
+	public void setKmPrice(double kmPrice)
+	{
 		this.kmPrice = kmPrice;
 	}
 
 	// Functional methods.
 
-	public int getTraveledDistance() {
+	public int getTraveledDistance()
+	{
 		return this.getExitKm() - this.getEntryKm();
 	}
 
-	public double calculatePlaneFee() {
+	public double calculatePlaneFee()
+	{
 		return this.kmPrice * this.getTraveledDistance();
 	}
 

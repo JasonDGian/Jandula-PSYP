@@ -12,7 +12,8 @@ import java.util.Random;
 import evalInicial.ejercicio1.excepciones.WordException;
 import evalInicial.ejercicio1.excepciones.WordSearchSizeException;
 
-public class WordSearch {
+public class WordSearch
+{
 
 	private char[][] table;
 	private Random generator = new Random();
@@ -24,11 +25,14 @@ public class WordSearch {
 	 *                 wordsearch.
 	 * @throws WordSearchSizeException - Exception thrown when the size is invalid.
 	 */
-	WordSearch(int numChars) throws WordSearchSizeException {
+	WordSearch(int numChars) throws WordSearchSizeException
+	{
 
-		if (numChars <= 0) {
+		if (numChars <= 0)
+		{
 			throw new WordSearchSizeException("The wordsearch table can't be of size 0 or lower.");
-		} else {
+		} else
+		{
 			table = new char[numChars][numChars];
 			this.initializeLetters();
 		}
@@ -36,20 +40,25 @@ public class WordSearch {
 
 	// Introduce una palabra en la sopa de letras si cabe. De no caber, lanza una
 	// excepción.
-	public void colocarPalabraHorizontal(String palabra, Coordinate coordenada, boolean Inverso) throws WordException {
+	public void colocarPalabraHorizontal(String palabra, Coordinate coordenada, boolean Inverso) throws WordException
+	{
 
 		// Si la longitud de la palabra supera los espacios disponibles.
-		if (palabra.length() > (this.table[coordenada.getAltitude()].length - coordenada.getLatitude())) {
+		if (palabra.length() > (this.table[coordenada.getAltitude()].length - coordenada.getLatitude()))
+		{
 			throw new WordException("ERROR: La palabra " + palabra + " excede el tamaño en la tabla.");
 		}
 
-		else {
+		else
+		{
 			palabra = palabra.toUpperCase();
-			if (Inverso) {
+			if (Inverso)
+			{
 				palabra = invertirPalabra(palabra);
 			}
 			int indiceLetra = 0;
-			for (int posicionLetra = coordenada.getLatitude(); indiceLetra < palabra.length(); posicionLetra++) {
+			for (int posicionLetra = coordenada.getLatitude(); indiceLetra < palabra.length(); posicionLetra++)
+			{
 
 				table[coordenada.getAltitude()][posicionLetra] = palabra.charAt(indiceLetra);
 				indiceLetra++;
@@ -58,23 +67,29 @@ public class WordSearch {
 	}
 
 	// Metodo que coloca una palabra vertical.
-	public void colocarPalabraVertical(String palabra, Coordinate coordenada, boolean Inverso) throws WordException {
+	public void colocarPalabraVertical(String palabra, Coordinate coordenada, boolean Inverso) throws WordException
+	{
 
 		// Si la longitud de la palabra supera los espacios disponibles.
-		if (palabra.length() > (this.table.length - coordenada.getAltitude())) {
-			throw new WordException("ERROR: La palabra " + palabra + " excede el tamaño en la tabla o no cabe en las coordenadas seleccionadas.");
+		if (palabra.length() > (this.table.length - coordenada.getAltitude()))
+		{
+			throw new WordException("ERROR: La palabra " + palabra
+					+ " excede el tamaño en la tabla o no cabe en las coordenadas seleccionadas.");
 		}
 
-		else {
+		else
+		{
 
 			palabra = palabra.toUpperCase();
 
-			if (Inverso) {
+			if (Inverso)
+			{
 				palabra = invertirPalabra(palabra);
 			}
 
 			int indiceLetra = 0;
-			for (int posicionLetra = coordenada.getAltitude(); indiceLetra < palabra.length(); posicionLetra++) {
+			for (int posicionLetra = coordenada.getAltitude(); indiceLetra < palabra.length(); posicionLetra++)
+			{
 
 				table[posicionLetra][coordenada.getLatitude()] = palabra.charAt(indiceLetra);
 				indiceLetra++;
@@ -90,7 +105,8 @@ public class WordSearch {
 	 * @param paramWord - The word to reverse.
 	 * @return - Returns the reversed word string.
 	 */
-	public static String invertirPalabra(String paramWord) {
+	public static String invertirPalabra(String paramWord)
+	{
 		StringBuilder revertedWord = new StringBuilder(paramWord);
 		return revertedWord.reverse().toString();
 	}
@@ -99,9 +115,12 @@ public class WordSearch {
 	 * Method used to initialize or overwrite the table with asterisks in all
 	 * positions. CAUTION: Will overwrite all previously stored values.
 	 */
-	public void initializeAsterisks() {
-		for (int row = 0; row < this.table.length; row++) {
-			for (int column = 0; column < this.table[row].length; column++) {
+	public void initializeAsterisks()
+	{
+		for (int row = 0; row < this.table.length; row++)
+		{
+			for (int column = 0; column < this.table[row].length; column++)
+			{
 				table[row][column] = '*';
 			}
 		}
@@ -111,13 +130,16 @@ public class WordSearch {
 	 * Method used to initialize or overwrite the table with random characters in
 	 * all positions. CAUTION: Will overwrite all previously stored values.
 	 */
-	public void initializeLetters() {
+	public void initializeLetters()
+	{
 
 		char randomChar;
 
-		for (int row = 0; row < this.table.length; row++) {
+		for (int row = 0; row < this.table.length; row++)
+		{
 
-			for (int column = 0; column < this.table[row].length; column++) {
+			for (int column = 0; column < this.table[row].length; column++)
+			{
 				randomChar = (char) (generator.nextInt(26) + 'A');
 				table[row][column] = randomChar;
 			}
@@ -128,22 +150,27 @@ public class WordSearch {
 	 * Will show for each character the number of time it appears within the word
 	 * search table.
 	 */
-	public void showCharSummary() {
+	public void showCharSummary()
+	{
 
 		HashMap<Character, Integer> charSummary = new HashMap<>();
 
-		for (int column = 0; column < this.table.length; column++) {
+		for (int column = 0; column < this.table.length; column++)
+		{
 
-			for (int row = 0; row < this.table[column].length; row++) {
+			for (int row = 0; row < this.table[column].length; row++)
+			{
 
-				if (charSummary.containsKey(this.table[column][row])) {
+				if (charSummary.containsKey(this.table[column][row]))
+				{
 
 					// Increments the value associated with the currently found character.
 					charSummary.put(this.table[column][row], charSummary.get(this.table[column][row]) + 1);
 
 				}
 
-				else {
+				else
+				{
 					// Adds the newly found character to the map with initial value 1 (first
 					// instance).
 					charSummary.put(this.table[column][row], 1);
@@ -162,13 +189,16 @@ public class WordSearch {
 	 * display.
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 
 		StringBuilder cadenaSopa = new StringBuilder();
 
-		for (int i = 0; i < this.table.length; i++) {
+		for (int i = 0; i < this.table.length; i++)
+		{
 
-			for (int j = 0; j < this.table[i].length; j++) {
+			for (int j = 0; j < this.table[i].length; j++)
+			{
 
 				cadenaSopa.append(this.table[i][j] + "  ");
 
@@ -187,13 +217,16 @@ public class WordSearch {
 	 * 
 	 * @return - String.
 	 */
-	public String toStrigForStorage() {
+	public String toStrigForStorage()
+	{
 
 		StringBuilder cadenaSopa = new StringBuilder();
 
-		for (int i = 0; i < this.table.length; i++) {
+		for (int i = 0; i < this.table.length; i++)
+		{
 
-			for (int j = 0; j < this.table[i].length; j++) {
+			for (int j = 0; j < this.table[i].length; j++)
+			{
 
 				cadenaSopa.append(this.table[i][j]);
 
@@ -211,20 +244,24 @@ public class WordSearch {
 	 * Stores the currently generated word search table into a file called
 	 * "wordsearch.txt".
 	 */
-	public void sendDataToFile() {
+	public void sendDataToFile()
+	{
 
-		try {
+		try
+		{
 			BufferedWriter fileWriter = new BufferedWriter(new FileWriter("wordsearch.txt"));
 			fileWriter.write(this.toStrigForStorage());
 			fileWriter.close();
 		}
 
-		catch (IOException e) {
+		catch (IOException e)
+		{
 			System.out.println(e.getMessage());
 		}
 	}
 
-	public void loadDataFromFile() {
+	public void loadDataFromFile()
+	{
 		boolean done = false;
 		int column = 0;
 		int row = 0;
@@ -233,22 +270,27 @@ public class WordSearch {
 		int lineFeed = '\n';
 
 		// Codeblock to find the height and width of lines for the table size.
-		try {
+		try
+		{
 
 			BufferedReader lineReader = new BufferedReader(new FileReader("wordsearch.txt"));
 
-			while (!done) {
+			while (!done)
+			{
 
 				line = lineReader.readLine();
 
 				// If the line is null then we done.
-				if (line == null) {
+				if (line == null)
+				{
 					done = true;
 				}
 				// If the line is NOT null then.
-				else {
+				else
+				{
 
-					if (line.length() > column) {
+					if (line.length() > column)
+					{
 						column = line.length();
 					}
 					row++;
@@ -257,38 +299,44 @@ public class WordSearch {
 
 			lineReader.close();
 
-		} catch (IOException e) {
+		} catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 
 		this.table = new char[row][column];
 
 		// Block to load data from file to the word search table.
-		try {
+		try
+		{
 			int tableRow = 0;
 			int tableColumn = 0;
 
 			BufferedReader fileReader = new BufferedReader(new FileReader("wordsearch.txt"));
 
 			done = false;
-			while (!done) {
+			while (!done)
+			{
 
 				read = fileReader.read();
 
-				if (read < 0) {
+				if (read < 0)
+				{
 					done = true;
-				} 
-				else {
-					
+				} else
+				{
+
 					// If a line feed is found.
-					if (read == lineFeed) {
+					if (read == lineFeed)
+					{
 						// Send to next row and reset column..
 						tableRow++;
 						tableColumn = 0;
 					}
-					
+
 					// If a character is successfully read.
-					else {
+					else
+					{
 						// Load said character and increment column positional reference.
 						this.table[tableRow][tableColumn] = (char) read;
 						tableColumn++;
@@ -298,45 +346,53 @@ public class WordSearch {
 			}
 
 			fileReader.close();
-		} catch (IOException e) {
+		} catch (IOException e)
+		{
 			System.out.println(e.getMessage());
 		}
 	}
 
 	/**
-	 * Method that provides a way to load data that contains instances of whitespace.
-	 * This method should not be of main use, is just here for special cases.
+	 * Method that provides a way to load data that contains instances of
+	 * whitespace. This method should not be of main use, is just here for special
+	 * cases.
 	 */
-	public void loadDataWithWhitespaces() {
+	public void loadDataWithWhitespaces()
+	{
 
 		int lineFeed = '\n';
 		boolean done = false;
 
 		// Reading file.
-		try {
+		try
+		{
 			BufferedReader lectorArchivo = new BufferedReader(new FileReader("wordsearch.txt"));
 
 			done = false;
 			int leido;
 			int column = 0;
 			int row = 0;
-			
 
 			// While the reader does not encounter exit signal (-1)
-			while (!done) {
+			while (!done)
+			{
 
 				leido = lectorArchivo.read();
-				if (leido < 0) {
+				if (leido < 0)
+				{
 					done = true;
-				} else {
+				} else
+				{
 					// If a line feed is encountered.
-					if (leido == lineFeed) {
+					if (leido == lineFeed)
+					{
 						// Increment column positional reference counter.
-	                    row++; // Move to the next row.
-	                    column = 0; // Reset column index for the new row.
+						row++; // Move to the next row.
+						column = 0; // Reset column index for the new row.
 					}
 					// If character is found.
-					else if (!Character.isWhitespace(leido)) {
+					else if (!Character.isWhitespace(leido))
+					{
 						// Load the character into the table and increment the row counter.
 						this.table[row][column] = (char) leido;
 						column++;
@@ -347,7 +403,8 @@ public class WordSearch {
 
 			lectorArchivo.close();
 
-		} catch (IOException e) {
+		} catch (IOException e)
+		{
 			System.out.println(e.getMessage());
 		}
 	}
