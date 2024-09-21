@@ -5,55 +5,11 @@ package evalInicial.ejercicio2;
  */
 public class GenericTicket extends Ticket {
 
+	// Represents the minimal distance a vehicle of this type must travel before a
+	// discount block is applied. For each time this distance is travels a discount
+	// is applied.
 	private final static int MIN_DISC_DISTANCE = 500;
-
-	public GenericTicket() {
-	}
-
-	public GenericTicket(int entryPoint, double kmPrice) {
-		this.setEntryKm(entryPoint);
-		this.setKmPrice(kmPrice);
-	}
-
-	@Override
-	public void recordTicketEntryPoint(int entryPoint) {
-		this.setEntryKm(entryPoint);
-	}
-
-	@Override
-	public void recordTicketExitPoint(int exitPoint) {
-		this.setExitKm(exitPoint);
-	}
-
-	@Override
-	public void recordKmPrice(double ticketPrice) {
-		this.setKmPrice(ticketPrice);
-	}
-
-	@Override
-	public double fetchDiscount() {
-
-		// Discount multiplier.
-		double discount = 0.0;
-
-		if (this.getTraveledDistance() >= 500) {
-
-			// For every certain amount of traveled distance (constant), the driver is given
-			// a 0.1 discount (10%).
-			int discountBlock = this.getTraveledDistance() / MIN_DISC_DISTANCE;
-			discount = 0.1 * discountBlock;
-		}
-		return discount;
-	}
-
-	public double fetchDiscount2(int level, int distance) {
-
-		if (distance < 500) {
-			return level;
-		} else {
-			return fetchDiscount2((level + 1), (distance - 500));
-		}
-	}
+	private final static double DISCOUNT_BLOCK = 0.1;
 
 	@Override
 	public boolean isSpecialVehicle() {
@@ -61,71 +17,37 @@ public class GenericTicket extends Ticket {
 	}
 
 	@Override
-	public int getTraveledDistance() {
-		return (this.getExitKm() - this.getEntryKm());
+	// Function to fetch the multiplier in double format. E.G. 0.25
+	public double fetchDiscountMultiplier() {
+		return fetchDiscountMultiplierAux(0, this.getTraveledDistance());
 	}
 
-	@Override
-	public double calculateFee() {
-		return (this.getKmPrice() * this.getTraveledDistance()) - this.calculateDiscount();
+	// Auxiliary method with recursive function to find the multiplier.
+	public double fetchDiscountMultiplierAux(double level, int distance) {
+		if (distance < MIN_DISC_DISTANCE) {
+			return (level);
+		} else {
+			return fetchDiscountMultiplierAux((level + DISCOUNT_BLOCK), (distance - MIN_DISC_DISTANCE));
+		}
 	}
 
-	// Calculates the plane discount value.
 	@Override
 	public double calculateDiscount() {
-		return (this.getKmPrice() * this.getTraveledDistance()) * this.fetchDiscount();
-	}
-
-	public void setEntryKm(int entryPoint) {
-		super.entryKm = entryPoint;
+		return this.calculatePlaneFee() * this.fetchDiscountMultiplier();
 	}
 
 	@Override
-	public int getEntryKm() {
-		return super.entryKm;
-	}
-
-	@Override
-	public void setExitKm(int exitPoint) {
-		super.exitKm = exitPoint;
-	}
-
-	@Override
-	public int getExitKm() {
-		return super.exitKm;
-	}
-
-	@Override
-	public void setKmPrice(double kmPrice) {
-		super.kmPrice = kmPrice;
-	}
-
-	@Override
-	public double getKmPrice() {
-		return super.kmPrice;
+	public double calculateDiscountedFee() {
+		return this.calculatePlaneFee() - this.calculateDiscount();
 	}
 
 	@Override
 	public String toString() {
-		return "GenericTicket [entryKm=" + entryKm + ", exitKm=" + exitKm + ", kmPrice=" + kmPrice
-				+ ", fetchDiscount()=" + fetchDiscount() + ", isSpecialVehicle()=" + isSpecialVehicle()
-				+ ", getTraveledDistance()=" + getTraveledDistance() + ", calculateFee()=" + calculateFee() + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return super.hashCode();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		return true;
+		return "GenericTicket [entryKm=" + this.getEntryKm() + ", exitKm=" + this.getExitKm() + ", kmPrice=" + this.getKmPrice()
+				+ ", isSpecialVehicle()=" + isSpecialVehicle() + ", fetchDiscountMultiplier()="
+				+ fetchDiscountMultiplier() + ", calculateDiscount()=" + calculateDiscount()
+				+ ", calculateDiscountedFee()=" + calculateDiscountedFee() + ", getTraveledDistance()="
+				+ getTraveledDistance() + ", calculatePlaneFee()=" + calculatePlaneFee() + "]";
 	}
 
 }

@@ -1,47 +1,12 @@
 package evalInicial.ejercicio2;
 
-public class SpecialTicket extends Ticket{
-	
+public class SpecialTicket extends Ticket {
+
+	// Represents the minimal distance a vehicle of this type must travel before a
+	// discount block is applied. For each time this distance is travels a discount
+	// is applied.
 	private final static int MIN_DISC_DISTANCE = 100;
-	
-	public SpecialTicket () {
-	}
-	
-	public SpecialTicket ( int entryPoint, double kmPrice ) {
-		this.setEntryKm(entryPoint);
-		this.setKmPrice(kmPrice);
-	}
-
-	@Override
-	public void recordTicketEntryPoint(int entryPoint) {
-		super.entryKm=entryPoint;
-	}
-
-	@Override
-	public void recordTicketExitPoint(int exitPoint) {
-		super.exitKm=exitPoint;
-	}
-
-	@Override
-	public void recordKmPrice(double kmPrice) {
-		super.kmPrice=kmPrice;		
-	}
-
-	@Override
-	public double fetchDiscount() {
-
-		// Discount multiplier.
-		double discount = 0.0;
-
-		if (this.getTraveledDistance() >= 100) {
-
-			// For every certain amount of traveled distance (constant), the driver is given
-			// a 0.1 discount (10%).
-			int discountBlock = this.getTraveledDistance() / MIN_DISC_DISTANCE;
-			discount = 0.05 * discountBlock;
-		}
-		return discount;
-	}
+	private final static double DISCOUNT_BLOCK = 0.05;
 
 	@Override
 	public boolean isSpecialVehicle() {
@@ -49,70 +14,40 @@ public class SpecialTicket extends Ticket{
 	}
 
 	@Override
-	public int getTraveledDistance() {
-		return this.getExitKm()-this.getEntryKm();
+	// Function to fetch the multiplier in double format. E.G. 0.25
+	public double fetchDiscountMultiplier() {
+		return fetchDiscountMultiplierAux(0, this.getTraveledDistance());
+	}
+
+	// Auxiliary method with recursive function to find the multiplier.
+	public double fetchDiscountMultiplierAux(double level, int distance) {
+		if (distance < MIN_DISC_DISTANCE) {
+			return (level);
+		} else {
+			return fetchDiscountMultiplierAux((level + DISCOUNT_BLOCK), (distance - MIN_DISC_DISTANCE));
+		}
 	}
 
 	@Override
-	public double calculateFee() {
-
-		
-		
-		return 0;
-	}
-
-	@Override
+	// Calculates the plane discount.
 	public double calculateDiscount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.calculatePlaneFee() * this.fetchDiscountMultiplier();
 	}
 
 	@Override
-	public void setEntryKm(int entryPoint) {
-		// TODO Auto-generated method stub
-		
+	// Applies discount to the plane fee.
+	public double calculateDiscountedFee() {
+		return this.calculatePlaneFee() - this.calculateDiscount();
 	}
 
 	@Override
-	public int getEntryKm() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setExitKm(int exitPoint) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getExitKm() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setKmPrice(double kmPrice) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public double getKmPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
+	// Returns a string representation of the ticket object.
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+		return "SpecialTicket [entryKm=" + this.getEntryKm() + ", exitKm=" + this.getExitKm() + ", kmPrice=" + this.getKmPrice()
+				+ ", isSpecialVehicle()=" + isSpecialVehicle() + ", fetchDiscountMultiplier()="
+				+ fetchDiscountMultiplier() + ", calculateDiscount()=" + calculateDiscount()
+				+ ", getTraveledDistance()=" + getTraveledDistance() + ", calculatePlaneFee()=" + calculatePlaneFee()
+				+ ", calculateDiscountedFee()=" + calculateDiscountedFee() + "]";
 	}
 
 }
