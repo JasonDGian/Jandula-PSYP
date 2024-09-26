@@ -38,6 +38,7 @@ Cada tipo de petición se define por su `verbo`.
 - `DELETE` Borra datos.
 
 **Ejemplo GET**
+En este ejemplo se solicita información al servicio.
 ```html
 <!-- Petición para el listado de clientes-->
 GET /api/customers
@@ -48,6 +49,37 @@ GET /api/customers
   { id: 2, nombre: "Bernarda" },
   ...
 ]
+```
+
+**Ejemplo PUT**
+En este ejemplo se solicita el actualizar información almacenada al servicio.
+```html
+<!-- Petición para actualizar un cliente concreto-->
+PUT /api/customers/1
+
+{ nombre: "Alfredo 2" }
+
+<!-- Respuesta obtenida -->
+{ id: 1, nombre: "Alfredo 2" }
+```
+
+
+**Ejemplo DELETE**
+En este ejemplo se solicita el borrado de información almacenada al servicio.
+```html
+<!-- Petición para actualizar un cliente concreto-->
+DELETE /api/customers/1
+```
+
+**Ejemplo POST**
+En este ejemplo se solicita la creación de nueva información almacenada al servicio.
+```html
+<!-- Petición para crear un nuevo cliente -->
+POST /api/customers
+{ nombre: "Carlos" }
+
+<!-- Respuesta obtenida -->
+{ id: 3, nombre: "Carlos" }
 ```
 
 ## 📍 ¿Qué es un Recurso?
