@@ -41,7 +41,24 @@ Las peticiones tienen un formato especifico.
 
 ![imagen](https://github.com/user-attachments/assets/4b140f3c-f8c6-466f-9021-89c57060aa68)
 
-### 🔹 Tipos de peticiones.  
+### 🔹 Peticiones.  
+Para interactuar con el servidor, un cliente envia peticiones.
+Las peticiones están formadas de la siguiente manera.   
+> Petición = `VERBO` + `ENDPOINT` + `HEADER` + `CUERPO`
+
+**Verbo o Metodo.**
+Define la acción que sucede con la petición. 
+**Endpoint - Punto de ataque.**
+Localiza el recurso en el servidor.
+- Suele ser una `URI`, en el caso de un servicio online será una `URL`.
+**Header - Cabecera.**
+Contiene los detalles necesarios para que se ejecute la llamada y manejar la respuesta.
+- Podría contener información de autenticación, clave de encripcación, mas detalles acerca de la ubicación del recurso etc..
+**Body - Cuerpo de la petición.**
+Contiene información relevante para o por el servidor. 
+- Por ejemplo un cuerpo puede contener nuevos datos a introducir mediante un PUT o POST.
+
+
 Cada tipo de petición se define por su `verbo`.
 - `GET` Recupera datos.
 - `POST` Introduce datos.
@@ -61,7 +78,7 @@ GET http://ejemplo.com/api/customers
   ...
 ]
 ```
-
+   
 **Ejemplo PUT**   
 En este ejemplo se solicita el **actualizar información** almacenada al servicio.
 ```html
@@ -73,15 +90,14 @@ PUT http://ejemplo.com/api/customers/1
 <!-- Respuesta obtenida -->
 { id: 1, nombre: "Alfredo 2" }
 ```
-
-
+   
 **Ejemplo DELETE**    
 En este ejemplo se solicita el **borrado de información** almacenada al servicio.
 ```html
 <!-- Petición para actualizar un cliente concreto-->
 DELETE http://ejemplo.com/api/customers/1
 ```
-
+   
 **Ejemplo POST**    
 En este ejemplo se solicita la creación de **nueva información** almacenada al servicio.
 ```html
@@ -92,7 +108,7 @@ POST http://ejemplo.com/api/customers
 <!-- Respuesta obtenida -->
 { id: 3, nombre: "Carlos" }
 ```
-
+   
 ### 🔹 Cuerpo de petición.
 Las peticiones pueden incluir un 'cuerpo', normalmente en formato JSON, que se envía junto a la petición para complementar la acción.
 Por ejemplo, si queremos agregar un objeto a una base de datos, deberemos incluir en el cuerpo de una petición `POST` la información que deseamos cargar en la base de datos.
@@ -114,6 +130,15 @@ Un detalle crítico de REST es el concepto de `statelessness` o ausencia de esta
 ![imagen](https://github.com/user-attachments/assets/1636377d-c11a-496a-b9c8-ae064904a625)
 
 <!-- https://youtu.be/-mN3VyJuCjM -->
+
+## 📍 Elementos de una RESTful API.
+Una RESTFul API se basa fundamentalmente en tres elementos principales.
+- Cliente
+- Servidor
+- Recursos
+
+Para acceder a un recurso, un cliente debe de realizar una petición HTTP. Las peticiones
+
 
 
 ## 📍 ¿Qué es un Recurso?
