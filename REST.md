@@ -44,19 +44,19 @@ Las peticiones tienen un formato especifico.
 ### 🔹 Peticiones.  
 Para interactuar con el servidor, un cliente envia peticiones.
 Las peticiones están formadas de la siguiente manera.   
-> Petición = `VERBO` + `ENDPOINT` + `HEADER` + `CUERPO`
-
-**Verbo o Metodo.**
-Define la acción que sucede con la petición. 
-**Endpoint - Punto de ataque.**
-Localiza el recurso en el servidor.
-- Suele ser una `URI`, en el caso de un servicio online será una `URL`.
-**Header - Cabecera.**
-Contiene los detalles necesarios para que se ejecute la llamada y manejar la respuesta.
-- Podría contener información de autenticación, clave de encripcación, mas detalles acerca de la ubicación del recurso etc..
-**Body - Cuerpo de la petición.**
-Contiene información relevante para o por el servidor. 
-- Por ejemplo un cuerpo puede contener nuevos datos a introducir mediante un PUT o POST.
+> Petición = `VERBO` + `ENDPOINT` + `HEADER` + `CUERPO`    
+    
+- **Verbo o Metodo.**      
+Define la acción que sucede con la petición.    
+- **Endpoint - Punto de ataque.**   
+Localiza el recurso en el servidor.   
+Suele ser una `URI`, en el caso de un servicio online será una `URL`.   
+- **Header - Cabecera.**      
+Contiene los detalles necesarios para que se ejecute la llamada y manejar la respuesta.   
+Podría contener información de autenticación, clave de encripcación, mas detalles acerca de la ubicación del recurso etc..   
+- **Body - Cuerpo de la petición.**     
+Contiene información relevante para o por el servidor.    
+Por ejemplo un cuerpo puede contener nuevos datos a introducir mediante un PUT o POST.   
 
 
 Cada tipo de petición se define por su `verbo`.
@@ -137,20 +137,13 @@ Una RESTFul API se basa fundamentalmente en tres elementos principales.
 - Servidor
 - Recursos
 
-Para acceder a un recurso, un cliente debe de realizar una petición HTTP. Las peticiones
+### 🔹 ¿Qué es un Recurso?
+En REST, un recurso es un componente fundamental que representa un elemento específico de datos, como un usuario, un producto o un pedido. 
+Los recursos se identifican mediante URIs (Identificadores Uniformes de Recursos), que son direcciones únicas que se pueden usar para acceder y manipular el recurso.
 
-
-
-## 📍 ¿Qué es un Recurso?
-
-
-## 📍 ¿Qué es una URI?
-
+**¿Qué tipos de recursos conocemos?**
+Normalmente, un recurso es **algo que puede ser almacenado en un ordenador y representado como un flujo de bits**: un documento, una fila en una base de datos o el resultado de ejecutar un algoritmo.
+La arquitectura REST trata todo su contenido como un recurso, que incluye páginas HTML, imágenes, archivos de texto, videos, etc. 
 
 ## 📍 ¿Qué tipos de parámetros existen?
 
-
-## 📍 ¿Qué tipos de verbos tenemos?
-
-
-## 📍 ¿Qué códigos de respuesta nos devuelve el servidor?
