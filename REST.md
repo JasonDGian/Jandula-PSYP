@@ -106,48 +106,8 @@ Los códigos de respuesta HTTP se dividen en `Niveles` que representan distintos
 ![imagen](https://github.com/user-attachments/assets/d98ffd0b-cc29-4192-a32b-b4e4fd810fd3)
 
 **Los códigos más comunes**
-   <table border="1">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>200</td>
-            <td>OK: La solicitud se ha procesado correctamente.</td>
-        </tr>
-        <tr>
-            <td>201</td>
-            <td>Created: La solicitud ha sido exitosa y se ha creado un nuevo recurso.</td>
-        </tr>
-        <tr>
-            <td>204</td>
-            <td>No Content: La solicitud se ha procesado correctamente, pero no hay contenido para devolver.</td>
-        </tr>
-        <tr>
-            <td>400</td>
-            <td>Bad Request: La solicitud es incorrecta o está mal formada.</td>
-        </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized: Se requiere autenticación para acceder al recurso.</td>
-        </tr>
-        <tr>
-            <td>403</td>
-            <td>Forbidden: El servidor entendió la solicitud, pero se niega a autorizarla.</td>
-        </tr>
-        <tr>
-            <td>404</td>
-            <td>Not Found: El recurso solicitado no se pudo encontrar.</td>
-        </tr>
-        <tr>
-            <td>500</td>
-            <td>Internal Server Error: Ha ocurrido un error en el servidor al procesar la solicitud.</td>
-        </tr>
-    </tbody>
-</table>
+   ![imagen](https://github.com/user-attachments/assets/5f0afc17-273e-4456-a49d-aaa705d56f34)
+
 
 ### 🔹 Protocolo sin estado.
 Un detalle crítico de REST es el concepto de `statelessness` o ausencia de estado. Esto significa que los participantes en la comunicación no almacenan información sobre el estado de las interacciones previas, y cada solicitud y respuesta es independiente de las demás.
