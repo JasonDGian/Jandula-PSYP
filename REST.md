@@ -150,7 +150,7 @@ Los códigos de respuesta HTTP se dividen en `Niveles` que representan distintos
 </table>
 
 ### 🔹 Protocolo sin estado.
-Un detalle crítico de REST es el concepto de statelessness o ausencia de estado. Esto significa que los participantes en la comunicación no almacenan información sobre el estado de las interacciones previas, y cada solicitud y respuesta es independiente de las demás.
+Un detalle crítico de REST es el concepto de `statelessness` o ausencia de estado. Esto significa que los participantes en la comunicación no almacenan información sobre el estado de las interacciones previas, y cada solicitud y respuesta es independiente de las demás.
    
 ![imagen](https://github.com/user-attachments/assets/1636377d-c11a-496a-b9c8-ae064904a625)
 
