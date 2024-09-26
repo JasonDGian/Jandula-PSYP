@@ -18,7 +18,7 @@ El proceso de exposición y creación de estos servicios está regulado por la *
 ### 🔹 Entonces... ¿Qué es REST? 
 REST o **Representational State Transfer** es una convención para servicios HTTP que proporciona principios para realizar operaciones CRUD.   
    
-**Caracteristicas principales:**
+**Caracteristicas principales:**   
 - *REST* es una interfaz para interconectar distintos sistemas mediante HTTP.
 - Permite obtener datos o generar operaciones sobre estos en distintos formatos, como `XML` y `JSON`.
 - Almacena lógica de negocio y sirve datos con una serie de URIs.
@@ -30,14 +30,14 @@ REST o **Representational State Transfer** es una convención para servicios HTT
 
 ¿Por qué se usa REST?
 
-**Tipos de peticiones.**
+**Tipos de peticiones.**   
 Cada tipo de petición se define por su `verbo`.
 - `GET` Recupera datos.
 - `POST` Introduce datos.
 - `PUT` Actualiza datos.
 - `DELETE` Borra datos.
 
-**Ejemplo GET**
+**Ejemplo GET**   
 En este ejemplo se solicita información al servicio.
 ```html
 <!-- Petición para el listado de clientes-->
@@ -51,7 +51,7 @@ GET /api/customers
 ]
 ```
 
-**Ejemplo PUT**
+**Ejemplo PUT**   
 En este ejemplo se solicita el actualizar información almacenada al servicio.
 ```html
 <!-- Petición para actualizar un cliente concreto-->
@@ -64,14 +64,14 @@ PUT /api/customers/1
 ```
 
 
-**Ejemplo DELETE**
+**Ejemplo DELETE**    
 En este ejemplo se solicita el borrado de información almacenada al servicio.
 ```html
 <!-- Petición para actualizar un cliente concreto-->
 DELETE /api/customers/1
 ```
 
-**Ejemplo POST**
+**Ejemplo POST**    
 En este ejemplo se solicita la creación de nueva información almacenada al servicio.
 ```html
 <!-- Petición para crear un nuevo cliente -->
