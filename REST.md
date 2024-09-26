@@ -101,7 +101,7 @@ Por ejemplo, si queremos agregar un objeto a una base de datos, deberemos inclui
 
 ### 🔹 Respuesta de petición.
 Al realizar una petición a una RESTful API recibiremos una respuesta a las peticiones que mandamos. Esta respuesta utiliza los códigos de estado de HTML para informarnos del estado o resultado de nuetra petición.
-Los códigos de respuesta HTTP se dividen en `Niveles` y `Especificaciones`
+Los códigos de respuesta HTTP se dividen en `Niveles` que representan distintos tipos generales de resultado. 
    
 ![imagen](https://github.com/user-attachments/assets/d98ffd0b-cc29-4192-a32b-b4e4fd810fd3)
 
@@ -151,6 +151,7 @@ Los códigos de respuesta HTTP se dividen en `Niveles` y `Especificaciones`
 
 ### 🔹 Protocolo sin estado.
 Un detalle critico de REST es el `Statelessness` o la carencia de estado. Esto significa que los participantesd e la comunicación no almacenan ninguna información el uno del otro y que cada petición y respuesta son indepentientes de otras peticiones y respuestas. Esta filosofia de carencia de estado nos guia hacia aplicaciones facilmente escalables y de comportamiento "well-behaved" que espera una respuesta a cada petición.
+   
 ![imagen](https://github.com/user-attachments/assets/1636377d-c11a-496a-b9c8-ae064904a625)
 
 <!-- https://youtu.be/-mN3VyJuCjM -->
