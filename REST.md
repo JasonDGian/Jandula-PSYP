@@ -105,10 +105,9 @@ Los códigos de respuesta HTTP se dividen en `Niveles` que representan distintos
    
 ![imagen](https://github.com/user-attachments/assets/d98ffd0b-cc29-4192-a32b-b4e4fd810fd3)
 
-**Los códigos más comunes**
-   ![imagen](https://github.com/user-attachments/assets/5f0afc17-273e-4456-a49d-aaa705d56f34)
-
-
+**Los códigos más comunes**   
+![imagen](https://github.com/user-attachments/assets/5f0afc17-273e-4456-a49d-aaa705d56f34)   
+      
 ### 🔹 Protocolo sin estado.
 Un detalle crítico de REST es el concepto de `statelessness` o ausencia de estado. Esto significa que los participantes en la comunicación no almacenan información sobre el estado de las interacciones previas, y cada solicitud y respuesta es independiente de las demás.
    
