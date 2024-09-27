@@ -1,3 +1,38 @@
+# 📌 Spring.
+Spring es un framework centrado en crear aplicaciones de calibre comercial con Java.  Esto significa que con este framework podemos evitar muchisimo "Boilerplate code" que ya no es necesario escribir a mano.
+**Spring ofrece IOC (Inversion of Control) y posibilita el uso de Transacciones.**
+   
+https://spring.io/   
+   
+# 📌 Spring boot.
+Spring Boot es un **sub-framework** basado en Spring.
+Dispone de algunas caracteristicas que nos permiten desarrollar aplicaciones de manera acelerada. Ofrece un sistema de autoconfiguración y "Anotaciones". Es facil de configurar y es genial
+con el uso de Stand-alone APIs.
+
+Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.
+
+## 🔹 IOC - Inversion of Control.
+En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
+
+## 🔹 Rest Controller.
+En Spring Boot, un **REST Controller** es una clase que se encarga de manejar las solicitudes HTTP en una aplicación web RESTful. Se utiliza la anotación `@RestController`, que combina las anotaciones `@Controller` y `@ResponseBody`. Esto significa que los métodos de la clase devolverán directamente los datos en formato JSON o XML, sin necesidad de usar una vista.
+   
+![imagen](https://github.com/user-attachments/assets/b3ca6d5c-89a1-4e9e-9f33-70e2020b1246)
+
+El concepto de REST Controller está relacionado con el concepto de Modelo-Vista-Controlador (MVC), pero se enfoca principalmente en la parte de controlador.  
+
+En el patrón MVC:
+- **Modelo**: Representa la lógica de negocio y los datos.
+- **Vista**: Se encarga de la presentación de los datos al usuario.
+- **Controlador**: Maneja las solicitudes y coordina entre el modelo y la vista.
+
+En el caso de un REST Controller, la vista se omite, ya que se devuelve directamente el modelo (datos) en formato JSON o XML. Esto permite que la lógica de la aplicación se enfoque en la gestión de datos y en cómo se exponen a los clientes, sin preocuparse por la presentación visual.
+
+
+
+
+
+
 # 📌 Anotaciones.
 
 
