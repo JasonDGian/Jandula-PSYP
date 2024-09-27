@@ -260,26 +260,20 @@ public class WordSearch
 		}
 	}
 
-	public void loadDataFromFile()
+	public boolean setTableToFileLength()
 	{
-		boolean done = false;
 		int column = 0;
 		int row = 0;
 		String line;
-		int read;
-		int lineFeed = '\n';
+		boolean done = false;
 
 		// Codeblock to find the height and width of lines for the table size.
-		try
+		try (BufferedReader lineReader = new BufferedReader(new FileReader("wordsearch.txt"));)
 		{
-
-			BufferedReader lineReader = new BufferedReader(new FileReader("wordsearch.txt"));
 
 			while (!done)
 			{
-
 				line = lineReader.readLine();
-
 				// If the line is null then we done.
 				if (line == null)
 				{
@@ -288,31 +282,42 @@ public class WordSearch
 				// If the line is NOT null then.
 				else
 				{
-
+					// Grab line length, if bigger than the current column value, update.
 					if (line.length() > column)
 					{
 						column = line.length();
 					}
 					row++;
 				}
+
 			}
 
-			lineReader.close();
+			// Based on the grabbed maximum length, create a new table.
+			this.table = new char[row][column];
 
 		} catch (IOException e)
 		{
 			e.printStackTrace();
+			return false;
 		}
 
-		this.table = new char[row][column];
+		return true;
+	}
+
+	public void loadDataFromFile()
+	{
+		boolean done = false;
+		int read;
+		int lineFeed = '\n';
+
+		// Based on the grabbed maximum length, create a new table.
+		this.setTableToFileLength();
 
 		// Block to load data from file to the word search table.
-		try
+		try (BufferedReader fileReader = new BufferedReader(new FileReader("wordsearch.txt")))
 		{
 			int tableRow = 0;
 			int tableColumn = 0;
-
-			BufferedReader fileReader = new BufferedReader(new FileReader("wordsearch.txt"));
 
 			done = false;
 			while (!done)
@@ -345,11 +350,11 @@ public class WordSearch
 
 			}
 
-			fileReader.close();
 		} catch (IOException e)
 		{
 			System.out.println(e.getMessage());
 		}
+
 	}
 
 	/**

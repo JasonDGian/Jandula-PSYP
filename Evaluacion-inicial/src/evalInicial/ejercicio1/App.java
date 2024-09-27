@@ -17,6 +17,7 @@ public class App
 		String userStringInput = "";
 		int userIntInput = 0;
 		boolean userBoolInput = false;
+		WordSearch ws = null;
 
 		// Main menu block.
 		boolean selected = false;
@@ -24,15 +25,14 @@ public class App
 		{
 			try
 			{
-				System.out.println(
-						"Welcome to Jay-Wordsearch\nWhat would you like to do?\n  1) Generate new Word-search\n  2) Load Word-search from file.");
+				System.out.println("-".repeat(70) + "\n" + 
+						"Welcome to Jay-Wordsearch\nWhat would you like to do?\n  1) Generate new Word-search\n  2) Load Word-search from file.\n  3) Check current word search.\n" + "-".repeat(70) + "\n");
 				switch (sc.nextInt())
 				{
 				case 1:
 					System.out.println("Generating a new word-search.");
-					selected = true;
-
-					// Generation block.
+					
+					// Word search Generation block.
 					boolean generated = false;
 					while (!generated)
 					{
@@ -41,34 +41,81 @@ public class App
 						System.out.println("Enter the size of the wordsearch you wish to generate: ");
 						try
 						{
-							WordSearch ws = new WordSearch(sc.nextInt());
+							ws = new WordSearch(sc.nextInt());
+							sc.nextLine();
+							
 
 							// Wordsearch on-screen
 							System.out.println("- WORDSEARCH SUCCESSFULLY GENERATED - ");
 							System.out.println(ws.toString());
 							generated = true;
-							
-						
+
 						} catch (InputMismatchException | WordSearchSizeException e)
 						{
 							System.out.println(e.getLocalizedMessage());
 							sc.nextLine();
+							
 						}
-						
-						
-						
-						// Word insertion block.
-						boolean done = false;
-						while ( !done ) {
-							done = insertWord( sc, ws);
-						}
+
 					}
 
+					System.out.println("Would you like to enter a word?");
+					String answer = sc.nextLine();
+
+					if (positives.contains(answer.toUpperCase()))
+					{
+						// Word insertion block.
+						boolean inserted = false;
+						while (!inserted)
+						{
+
+							try
+							{
+								// Method to insert word on wordsearch.
+								insertWord(sc, ws);
+
+								System.out.println("Do you wish to enter another word? ");
+								answer = sc.nextLine();
+								if ( !(positives.contains(answer.toUpperCase())) )
+								{ inserted=true; }
+
+							} catch (InputMismatchException e)
+							{
+								System.out.println(e.getLocalizedMessage());
+								sc.nextLine();
+							}
+
+						}
+
+					}
+					
+					if ( ws!=null ) {
+						System.out.println(ws.toString());
+					}
 
 					break;
 				case 2:
+					try {
 					System.out.println("Loading word-search.");
-					selected = true;
+					ws = new WordSearch(10);
+					ws.loadDataFromFile();
+					System.out.println("- WORDSEARCH SUCCESSFULLY LOADED -");
+					}
+					catch (WordSearchSizeException e)
+					{
+						e.getLocalizedMessage();
+					}
+					break;
+					
+				case 3:
+					
+					if ( ws!=null ) {
+						System.out.println(	ws.toString());
+					} else {
+						System.out.println("\nATTENTION:");
+						System.out.println(	"No word search generated. Please generate a new wordsearch or load from file." );
+					}
+					
 					break;
 				default:
 					System.out.println("INVALID OPTION: Please select a valid option.");
@@ -83,22 +130,11 @@ public class App
 		} // Main menu block end.
 
 	}
-	
-	public boolean generateWS(int numChars) {
-		if (numChars <= 0)
-		{
-			throw new WordSearchSizeException("The wordsearch table can't be of size 0 or lower.");
-		} else
-		{
-			table = new char[numChars][numChars];
-			this.initializeLetters();
-		}
-	}
 
-	public boolean insertWord(Scanner sc, WordSearch ws)
+	public static boolean insertWord(Scanner sc, WordSearch ws)
 	{
 		boolean valid = false;
-		int wordOrientation=0;
+		int wordOrientation = 0;
 		String positivesAnwsers = "YESIMJAOUI";
 		boolean userBoolInput = false;
 
@@ -136,25 +172,25 @@ public class App
 
 		try
 		{
-			userBoolInput=false;
+			userBoolInput = false;
 			if (wordOrientation == 1)
 			{
 				ws.colocarPalabraHorizontal(wordToInsert, co, userBoolInput);
-				userBoolInput=true;
+				userBoolInput = true;
 			} else if (wordOrientation == 2)
 			{
 				ws.colocarPalabraVertical(wordToInsert, co, userBoolInput);
-				userBoolInput=true;
+				userBoolInput = true;
 			} else
 			{
 				System.out.println("Opcion de orientación no valida.");
-				userBoolInput=false;
+				userBoolInput = false;
 			}
 
 		} catch (WordException e)
 		{
 			System.out.println("The word entered does not fit in the chosen position.");
-			userBoolInput=true;
+			userBoolInput = true;
 		}
 
 		// Result print.
