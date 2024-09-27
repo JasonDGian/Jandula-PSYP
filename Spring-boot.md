@@ -1,5 +1,8 @@
 # 📌 Anotaciones.
 
+
+
+
 ## @Bean.
 Indica que un metodo produce una instancia que debe ser gestioanda pro el ecosistema pspinrg.   
 Se utilza dentro de clases con @Configuration para declara metodos que devuelvan instancias beans.
@@ -11,12 +14,20 @@ Se utiliza para indicar una clase que declara uno o mas metodos @Bean. Estas cla
 Realiaza la inyeccion de dependencias de beansa gestionados por spring automaticamente.
 Se utiliza en campos metodos o constructoreds para indicar a spring que inyecte automaticamente un bean apropriado.
 
-## @¢omponent
+## @Component
 
 @Service
 @Repository
 @Controller
-
-
-
 @ComponentScan
+@SpringBootApplication
+@RestController
+
+@RequestMapping, @GetMapping, @PostMapping,
+@PutMapping, @DeleteMapping
+
+@PathVariable y @RequestParam
+
+@EnableScheduling, @Scheduled
+@Transactional
+
