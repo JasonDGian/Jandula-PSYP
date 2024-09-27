@@ -19,7 +19,7 @@ Es una tecnica de separación de flujo de trabajo que nos permite separar operac
 
 # 📍 Colección
 Una coleccion es una herramienta para agrupar y organizar peticiones.   
-Para crear una colección pinchamos en el panel izquierdo en `Collections` y a continuación en el simbolo `+`.   
+Para crear una colección pinchamos en el panel izquierdo en `Collections` y a continuación en el simbolo `+` y seleccionamos `New Collection`. 
    
 ![imagen](https://github.com/user-attachments/assets/c042260d-a67b-4009-bfbb-63f0392333b6)   
     
@@ -44,6 +44,35 @@ Una vez la petición se ha guardado con éxito aparecerá en el listado de petic
 Además en las colecciones podemos crear carpetas o unidades organizativas con el nombre que deseamos.   
 En la imagen de ejemplo he creado 3 carpetas, una para cada tipo de petición.   
 ![imagen](https://github.com/user-attachments/assets/fdcdae90-d580-430a-8224-07f5906d1c95)
+
+## 🔹 Exportar colecciones.
+Las colecciones que creamos en nuestra aplicación postman o en su frontend web, pueden ser exportadas y compartidas.   
+Para ello pinchamos en el simbolo de  `···` de la colección que deseamos exportar y a continuación en `Export`.   
+   
+![imagen](https://github.com/user-attachments/assets/60028bdc-a5ac-4a03-9061-7e1cb5870368)
+    
+A continuación seleccionamos la versión a exportar y pinchamos en Export.
+   
+![imagen](https://github.com/user-attachments/assets/78ce9bf6-bd20-4226-9357-ac00e45143bc)
+   
+Seleccionamos un lugar donde guardar nuestra colección y se generará un fichero Json.
+   
+![imagen](https://github.com/user-attachments/assets/0ab1d8ac-3383-4c79-9e1c-2c6cea16272f)
+     
+![imagen](https://github.com/user-attachments/assets/72d269e2-ecda-4c6a-9552-0a63bd9769c1)   
+
+## 🔹 Importar colecciones.
+Para importar una coleccón pinchamos en `Import` desde el panel de colecciones.   
+   
+![imagen](https://github.com/user-attachments/assets/7e2f65e2-2ef5-4b70-84f4-e7b2dc9c5258)
+   
+Seleccionamos el fichero Json deseado y pinchamos en `Open`.   
+   
+![imagen](https://github.com/user-attachments/assets/1c3f56eb-95cf-4a77-a590-54a316bc5f27)
+
+Aparecerá la ventana de confirmación de importación. Aqui pinchamos en `Import` una ultima vez.   
+   
+![imagen](https://github.com/user-attachments/assets/9f89a3ae-e76a-4d05-89ae-c0d1fb7c4a3a)
 
 
 # 📍 ¿?
