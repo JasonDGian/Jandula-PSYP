@@ -1,6 +1,6 @@
 # 📌 Spring.
 Spring es un framework centrado en crear aplicaciones de calibre comercial con Java.  Esto significa que con este framework podemos evitar muchisimo "Boilerplate code" que ya no es necesario escribir a mano.
-**Spring ofrece IOC (Inversion of Control) y posibilita el uso de Transacciones.**
+**Spring ofrece además técnicas IOC (Inversion of Control) y posibilita el uso de Transacciones.**
    
 https://spring.io/   
    
@@ -8,15 +8,18 @@ https://spring.io/
 Spring Boot es un **sub-framework** basado en Spring.
 Dispone de algunas caracteristicas que nos permiten desarrollar aplicaciones de manera acelerada. Ofrece un sistema de autoconfiguración y "Anotaciones". Es facil de configurar y es genial
 con el uso de Stand-alone APIs.
+   
+**Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.**
 
-Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.
+## 🔹 Contenedores incrustados. 
+Una de las principales características del framework Spring Boot es permite la ejecución de aplicaciones web sin necesidad de usar servidores de aplicaciones externos donde desplegarlas. Esto lo consigue mediante el uso de un contenedor incrustado en la misma aplicación (Tomcat, Jetty o Undertow). Estos contenedores vienen pre-configurados por defecto pero podemos modificar sus parametros si es necesario.
 
 ## 🔹 IOC - Inversion of Control.
 En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
 
 
 ## 🔹 Spring Boot Container.
-
+El contenedor de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
 
 
 ## 🔹 Rest Controller.
