@@ -1,5 +1,8 @@
 package evalInicial.ejercicio1;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import evalInicial.ejercicio1.excepciones.WordException;
 import evalInicial.ejercicio1.excepciones.WordSearchSizeException;
 
@@ -9,56 +12,155 @@ public class App
 	public static void main(String[] args)
 	{
 
-		try
+		Scanner sc = new Scanner(System.in);
+		String positives = "YESJASI";
+		String userStringInput = "";
+		int userIntInput = 0;
+		boolean userBoolInput = false;
+
+		// Main menu block.
+		boolean selected = false;
+		while (!selected)
 		{
-
-			// Genera la sopa de letras.
-			WordSearch sopa = new WordSearch(10);
-
-			// Coloca palabras en la sopa.
 			try
 			{
-				sopa.colocarPalabraVertical("Conocer", new Coordinate(0, 0), false);
-				sopa.colocarPalabraVertical("Formacion", new Coordinate(1, 1), false);
-				sopa.colocarPalabraHorizontal("Caracter", new Coordinate(0, 0), false);
-				sopa.colocarPalabraHorizontal("Tenor", new Coordinate(3, 1), true);
-				sopa.colocarPalabraHorizontal("Disponer", new Coordinate(7, 0), false);
-				sopa.colocarPalabraVertical("Tono", new Coordinate(2, 2), false);
-				sopa.colocarPalabraVertical("Raton", new Coordinate(0, 2), false);
-				sopa.colocarPalabraVertical("Roedor", new Coordinate(0, 7), false);
-				sopa.colocarPalabraVertical("Raros", new Coordinate(5, 7), false);
-				sopa.colocarPalabraHorizontal("Sol", new Coordinate(9, 7), false);
-				sopa.colocarPalabraHorizontal("Negar", new Coordinate(9, 1), false);
-				sopa.colocarPalabraHorizontal("Roca", new Coordinate(5, 4), true);
-				sopa.colocarPalabraVertical("Sorpresa", new Coordinate(0, 9), false);
+				System.out.println(
+						"Welcome to Jay-Wordsearch\nWhat would you like to do?\n  1) Generate new Word-search\n  2) Load Word-search from file.");
+				switch (sc.nextInt())
+				{
+				case 1:
+					System.out.println("Generating a new word-search.");
+					selected = true;
 
-			} catch (WordException e)
+					// Generation block.
+					boolean generated = false;
+					while (!generated)
+					{
+
+						// User input for generation.
+						System.out.println("Enter the size of the wordsearch you wish to generate: ");
+						try
+						{
+							WordSearch ws = new WordSearch(sc.nextInt());
+
+							// Wordsearch on-screen
+							System.out.println("- WORDSEARCH SUCCESSFULLY GENERATED - ");
+							System.out.println(ws.toString());
+							generated = true;
+							
+						
+						} catch (InputMismatchException | WordSearchSizeException e)
+						{
+							System.out.println(e.getLocalizedMessage());
+							sc.nextLine();
+						}
+						
+						
+						
+						// Word insertion block.
+						boolean done = false;
+						while ( !done ) {
+							done = insertWord( sc, ws);
+						}
+					}
+
+
+					break;
+				case 2:
+					System.out.println("Loading word-search.");
+					selected = true;
+					break;
+				default:
+					System.out.println("INVALID OPTION: Please select a valid option.");
+					break;
+
+				}
+			} catch (InputMismatchException e)
 			{
-				System.out.println(e.getMessage());
-
+				System.out.println("INPUT ERROR: Please enter a number to select a choice.");
+				sc.nextLine();
 			}
-
-			// Cuarda la sopa en un fichero.
-			sopa.sendDataToFile();
-
-			// Muestra la sopa por pantalla.
-			System.out.println(sopa);
-
-			// Muestra el resumen de letras.
-			sopa.showCharSummary();
-
-			WordSearch sopa2 = new WordSearch(10);
-
-			// Carga la sopa de letras desde fichero.
-			sopa2.loadDataFromFile();
-
-			// Muestra la sopa (una vez cargada.)
-			System.out.println(sopa2);
-
-		} catch (WordSearchSizeException e)
-		{
-			System.out.println(e.getMessage());
-		}
+		} // Main menu block end.
 
 	}
+	
+	public boolean generateWS(int numChars) {
+		if (numChars <= 0)
+		{
+			throw new WordSearchSizeException("The wordsearch table can't be of size 0 or lower.");
+		} else
+		{
+			table = new char[numChars][numChars];
+			this.initializeLetters();
+		}
+	}
+
+	public boolean insertWord(Scanner sc, WordSearch ws)
+	{
+		boolean valid = false;
+		int wordOrientation=0;
+		String positivesAnwsers = "YESIMJAOUI";
+		boolean userBoolInput = false;
+
+		System.out.println("Enter the word you wish to insert.");
+		String wordToInsert = sc.nextLine();
+
+		// Word orientation block.
+		while (!valid)
+		{
+
+			System.out.println(
+					"In what orientation would you like to insert the word?\n  1) - Horizontal\n  2) - Vertical");
+			wordOrientation = sc.nextInt();
+			// If word orientation is equal to 1 or 2 the selection will be considered
+			// valid.
+			valid = (wordOrientation == 1 || wordOrientation == 2);
+
+		}
+
+		// User coordinates configuration.
+		Coordinate co = new Coordinate();
+		System.out.println("Enter insertion starting ROW for the first letter.");
+		co.setAltitude((sc.nextInt()));
+		sc.nextLine(); // scanner pseudo-flush
+		System.out.println("Enter insertion starting COLUMN for the first letter.");
+		co.setLatitude((sc.nextInt()));
+		sc.nextLine(); // scanner pseudo-flush
+
+		// Would you like to reverse the word direction?
+		System.out.println("Would you like to reverse the word direction? Y/N");
+		if (positivesAnwsers.contains(sc.nextLine()))
+		{
+			userBoolInput = true;
+		}
+
+		try
+		{
+			userBoolInput=false;
+			if (wordOrientation == 1)
+			{
+				ws.colocarPalabraHorizontal(wordToInsert, co, userBoolInput);
+				userBoolInput=true;
+			} else if (wordOrientation == 2)
+			{
+				ws.colocarPalabraVertical(wordToInsert, co, userBoolInput);
+				userBoolInput=true;
+			} else
+			{
+				System.out.println("Opcion de orientación no valida.");
+				userBoolInput=false;
+			}
+
+		} catch (WordException e)
+		{
+			System.out.println("The word entered does not fit in the chosen position.");
+			userBoolInput=true;
+		}
+
+		// Result print.
+		System.out.println("- WORD SUCCESSFULLY ENTERED - ");
+		System.out.println(ws.toString());
+		return userBoolInput;
+	}
+
 }

@@ -12,6 +12,11 @@ public class Coordinate
 	private int altitude; // The altitude of the coordinate.
 	private int latitude; // The latitude of the coordinate.
 
+	public Coordinate(){
+		this.altitude = 0;
+		this.latitude = 0;
+	}
+	
 	/**
 	 * Constructor to initialize the Coordinate object with specified altitude and
 	 * latitude.

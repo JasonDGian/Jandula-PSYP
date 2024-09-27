@@ -1,9 +1,10 @@
 package evalInicial.ejercicio3;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class Country
+public class Country implements Comparable
 {
 
 	/**
@@ -21,14 +22,13 @@ public class Country
 	private boolean isBigFive;
 	private String name;
 	private int votesReceived;
-	private TreeMap<String, Integer> emitedVotes;
+	private TreeMap<Country, Integer> emitedVotes;
 	// Create a random generator.
 	Random generator = new Random();
 
 	// Country constructor that intializes the country with votes to 0.
 	public Country(boolean isBigFive, String name)
 	{
-		super();
 		this.isBigFive = isBigFive;
 		this.name = name;
 		this.votesReceived = 0;
@@ -50,7 +50,7 @@ public class Country
 		return votesReceived;
 	}
 
-	public TreeMap<String, Integer> getEmitedVotes()
+	public TreeMap<Country, Integer> getEmitedVotes()
 	{
 		return emitedVotes;
 	}
@@ -65,7 +65,7 @@ public class Country
 		this.isBigFive = isBigFive;
 	}
 
-	public void setEmitedVotes(TreeMap<String, Integer> emitedVotes)
+	public void setEmitedVotes(TreeMap<Country, Integer> emitedVotes)
 	{
 		this.emitedVotes = emitedVotes;
 	}
@@ -97,30 +97,67 @@ public class Country
 	 * 
 	 * @param countries - Array of countries to be voted.
 	 */
-	public void emitVote(Country[] countries)
+	public TreeMap<Country, Integer> emitVote(Country[] countries)
 	{
 
-		for (Country participant : countries)
+		Country randomCountry;
+		int slotIndex = 0;
+
+		// Treemap to store the emitted vodes.
+		TreeMap<Country, Integer> emittedVotes = new TreeMap<>();
+
+		while (slotIndex < this.voteValue.length)
 		{
-			int vote = generator.nextInt(9);
-			
-			if (!(participant.equals(this)))
+			// Pick a random country.
+			randomCountry = countries[generator.nextInt(countries.length)];
+
+			// If the currently picked country is not in the treemap yet.
+			if ( !(emittedVotes.containsKey(randomCountry)) && !(randomCountry.equals(this)))
 			{
-				// Saves the generated vote in the emitted votes.
-				this.getEmitedVotes().put(participant.getName(), vote);
-				// Adds the vote to the country that received it score.
-				participant.addVote(vote);
-			} else
-			{
-				this.getEmitedVotes().put(participant.getName(), 0);
+				// Store the generated country in the tree map with a value slot.
+				emittedVotes.put(randomCountry, voteValue[slotIndex]);
+				// Send to next value slot.
+				slotIndex++;
 			}
+
 		}
+		return emittedVotes;
 	}
 
 	public void printEmittedVotes()
 	{
-		System.out.println(this.getEmitedVotes());
+		System.out.println(this.getEmitedVotes().toString());
 
 	}
+
+	
+	// Comparison methods.
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(name);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Country other = (Country) obj;
+		return Objects.equals(name, other.name);
+	}
+
+	@Override
+	public int compareTo(Object other) {
+	    Country otherCountry = (Country) other;
+	    return this.getName().compareTo(otherCountry.getName());
+	}
+	
+	
 
 }

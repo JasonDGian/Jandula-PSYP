@@ -5,12 +5,12 @@ import java.util.TreeMap;
 public class App
 {
 
-	/**
-	 * 43 paises votan. asociar un pais random al juego de puntos que sea finalista
-	 * y que no sea si mismo y no haya sido votado ya.
-	 */
 	public static void main(String[] args)
 	{
+
+		// Data loading procedure.
+		// Data would be loaded one of two ways. Either through a file or through an
+		// iterating loop.
 
 		// Country objects.
 		Country serbia = new Country(false, "Serbia");
@@ -42,26 +42,20 @@ public class App
 		Country portugal = new Country(true, "Portugal");
 
 		// Array of finalist countries.
-		Country[] countries = new Country[]
+		Country[] finalistCountries = new Country[]
 		{ serbia, moldavia, hungria, ucrania, suecia, australia, noruega, dinamarca, eslovenia, holanda, albania,
 				republicaCheca, lituania, israel, estonia, bulgaria, austria, finlandia, irlanda, chipre, alemania,
 				italia, reinoUnido, francia, espana, portugal };
 
-		for (Country participant : countries)
+		for (Country participant : finalistCountries)
 		{
-			participant.emitVote(countries);
-			//participant.printEmittedVotes();
+			participant.emitVote(finalistCountries);
+			// participant.printEmittedVotes();
 		}
 
-		TreeMap<String, Integer> finalScore = new TreeMap<>();
-
+		// Print serbia's emited votes.
+		serbia.printEmittedVotes();
 		
-		for (Country participant : countries)
-		{
-			finalScore.put(participant.getName(), participant.getVotesReceived());
-		}
-
-		System.out.println(finalScore.toString());
 
 	}
 

@@ -11,6 +11,6 @@ public class WordSearchSizeException extends Exception
 
 	public WordSearchSizeException(String errorMessage)
 	{
-		super(errorMessage);
+		super("Word search size is invalid. Please enter a size greater than 0.");
 	}
 }
