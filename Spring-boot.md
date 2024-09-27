@@ -14,6 +14,11 @@ Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conoce
 ## 🔹 IOC - Inversion of Control.
 En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
 
+
+## 🔹 Spring Boot Container.
+
+
+
 ## 🔹 Rest Controller.
 En Spring Boot, un **REST Controller** es una clase que se encarga de manejar las solicitudes HTTP en una aplicación web RESTful. Se utiliza la anotación `@RestController`, que combina las anotaciones `@Controller` y `@ResponseBody`. Esto significa que los métodos de la clase devolverán directamente los datos en formato JSON o XML, sin necesidad de usar una vista.
    
@@ -32,9 +37,8 @@ En el caso de un REST Controller, la vista se omite, ya que se devuelve directam
 
 
 
-
 # 📌 Anotaciones.
-
+En Spring Boot, las anotaciones son, "etiquetas" que preceden a las clases y otros elementos que definen cómo deben ser manejados por el contenedor de Spring. Estas anotaciones indican al contenedor qué clases deben ser tratadas como componentes, controladores, servicios, etc.
 
 
 
