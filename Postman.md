@@ -7,16 +7,6 @@ En postman podemos crear peticiones para enviar a un servidor y observar la resp
 
 ![imagen](https://github.com/user-attachments/assets/1f4fc97e-d3e7-4ea0-8088-da50dabb32ae)
 
-
-
-# 📍 Workspaces
-Es una tecnica de separación de flujo de trabajo que nos permite separar operaciones y peticiones no relacionadas entre ellas. 
-
-
-# 📍 Reportes
-
-# 📍 Pestaña Explore.
-
 # 📍 Colección
 Una coleccion es una herramienta para agrupar y organizar peticiones.   
 Para crear una colección pinchamos en el panel izquierdo en `Collections` y a continuación en el simbolo `+` y seleccionamos `New Collection`. 
@@ -74,5 +64,3 @@ Aparecerá la ventana de confirmación de importación. Aqui pinchamos en `Impor
    
 ![imagen](https://github.com/user-attachments/assets/9f89a3ae-e76a-4d05-89ae-c0d1fb7c4a3a)
 
-
-# 📍 ¿?
