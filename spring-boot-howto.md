@@ -49,3 +49,34 @@ En la anotación `@RequestMapping` incluimos la definición de la url a la que r
 		return "<h1>Holla!</h1>";
 	}
 ```
+
+
+# 📌 Creando objetos mediante peticiones POST.
+Para configurar la creación de objetos mediante peticiones debemos seguir el siguiente flujo de trabajo.
+1. Definir el objeto.
+	Es posible que el objeto esté basado en un elemento de base de datos, de ser el caso construiriamos el objeto teniendo esto en cuenta.
+2. Definir una accion de @PostMapping en el controlador.
+	
+3. Probar el post request con un json de prueba.
+4. Mapear el JSON al objeto.
+5. Configurar la respuesta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
