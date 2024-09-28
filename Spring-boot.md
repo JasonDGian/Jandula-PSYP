@@ -18,10 +18,14 @@ con el uso de Stand-alone APIs.
 Una de las principales características del framework Spring Boot es permite la ejecución de aplicaciones web sin necesidad de usar servidores de aplicaciones externos donde desplegarlas. Esto lo consigue mediante el uso de un contenedor incrustado en la misma aplicación (Tomcat, Jetty o Undertow). Estos contenedores vienen pre-configurados por defecto pero podemos modificar sus parametros si es necesario.
 
 ## 🔹 IOC - Inversion of Control.
+IOC es un principio de diseño o técnica utilizada en el desarrollo de software para invertir el control del flujo de ejecución o las dependencias en una aplicación.
 En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
 
 ### ▫️ IOC Container.
 El contenedor IOC de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
+
+>![NOTE]
+> No es una tecnología, ni una convención, sino una técnica que describe cómo los objetos reciben sus dependencias.
 
 ## 🔹 Rest Controller.
 En Spring Boot, un **REST Controller** es una clase que se encarga de manejar las solicitudes HTTP en una aplicación web RESTful. Se utiliza la anotación `@RestController`, que combina las anotaciones `@Controller` y `@ResponseBody`. Esto significa que los métodos de la clase devolverán directamente los datos en formato JSON o XML, sin necesidad de usar una vista.
