@@ -63,20 +63,29 @@ En ellas debemos especificar si atienden a una url concreta distinta a la raiz.
 # 📌 Creando objetos mediante peticiones POST.
 Para configurar la creación de objetos mediante peticiones debemos seguir el siguiente flujo de trabajo.
 1. Definir el objeto.
-	Es posible que el objeto esté basado en un elemento de base de datos, de ser el caso construiriamos el objeto teniendo esto en cuenta.
-2. Definir una accion de @PostMapping en el controlador.
-	
-3. Probar el post request con un json de prueba.
-4. Mapear el JSON al objeto.
-5. Configurar la respuesta.
+2. Crear un controlador
+3. Definir una accion de @PostMapping en el controlador.
+4. Probar el post request con un json de prueba.
+5. Mapear el JSON al objeto.
+6. Configurar la respuesta.
 
 
 
+## 🔹 1. Definir el objeto.
+El primer paso es definir una clase que representará el objeto que deseas crear. Si la petición POST contiene datos que se deben mapear a un objeto en tu aplicación, debes crear un Data Transfer Object (DTO) o una entidad, dependiendo de si este objeto va a persistir o no.
 
+## 🔹 2. Crear un Controlador
+Luego de crear un objeto, debes definir un controlador en Spring Boot que maneje las peticiones HTTP POST y reciba el objeto a través del cuerpo de la solicitud (request body).
+```java
+@PostMapping
+    public Persona crearPersona(@RequestBody Persona persona) {
+        // Aquí podrías guardar el objeto en una base de datos o procesarlo
+        System.out.println("Persona recibida: " + persona.getNombre() + ", " + persona.getEdad());
 
-
-
-
+        // Retornamos la persona creada (podría ser útil en algunos casos)
+        return persona;
+    }
+```
 
 
 
