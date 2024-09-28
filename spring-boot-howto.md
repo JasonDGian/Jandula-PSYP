@@ -25,11 +25,14 @@ public class Controller
 
 
 ## Explicación.
-`@RestController`   
-declara la clase como un controlador en Spring que maneja solicitudes HTTP, combinando la funcionalidad de @Controller y @ResponseBody. Esto significa que los métodos dentro de la clase devolverán directamente datos en lugar de una vista.  
-
+`@RestController` 
+<img align="right" height="200" src="https://github.com/user-attachments/assets/a2c0b328-f409-4f0b-ba36-074f5ef600e3"><img>  
+Declara la clase como un controlador en Spring que maneja solicitudes HTTP, combinando la funcionalidad de @Controller y @ResponseBody. Esto significa que los métodos dentro de la clase devolverán directamente datos en lugar de una vista.  
+   
+   
 Al combinarlo con la anotación `@RequestMapping("/v1")`, se define una **URL base** para todas las rutas dentro de esta clase. Es decir, todas las rutas adicionales definidas en esta clase tendrán este prefijo en la URL.   
 Por ejemplo, si dentro de la clase defines una ruta `@GetMapping("/items")`, la URL completa sería `/v1/items`.
+
 
 `@RequestMapping("/test")`
 Esta anotación define que el método que sigue se va a invocar cuando se realice una solicitud a la URL o endpoint '/test'.   
