@@ -24,7 +24,7 @@ En lugar de hacer que programador controle el flujo de la aplicacion y que objet
 ### ▫️ IOC Container.
 El contenedor IOC de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
 
->![NOTE]
+>[!NOTE]
 > No es una tecnología, ni una convención, sino una técnica que describe cómo los objetos reciben sus dependencias.
 
 ## 🔹 Rest Controller.
