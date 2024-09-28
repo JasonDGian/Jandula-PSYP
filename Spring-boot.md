@@ -14,7 +14,7 @@ con el uso de Stand-alone APIs.
    
 **Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.**
 
-## 🔹 Contenedores incrustados. 
+## 🔹 Servidores incrustados. 
 Una de las principales características del framework Spring Boot es permite la ejecución de aplicaciones web sin necesidad de usar servidores de aplicaciones externos donde desplegarlas. Esto lo consigue mediante el uso de un contenedor incrustado en la misma aplicación (Tomcat, Jetty o Undertow). Estos contenedores vienen pre-configurados por defecto pero podemos modificar sus parametros si es necesario.
 
 ## 🔹 IOC - Inversion of Control.
