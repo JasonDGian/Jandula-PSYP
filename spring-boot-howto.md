@@ -50,6 +50,13 @@ En la anotación `@RequestMapping` incluimos la definición de la url a la que r
 	}
 ```
 
+Pero tambien podemos hacer uso de derivacods de @RequesMapping y mapear directamente el verbo objetivo.
+Las anotaciones son:
+- @PostMapping
+- @GetMapping
+- @PutMapping
+- @DeleteMapping
+
 
 # 📌 Creando objetos mediante peticiones POST.
 Para configurar la creación de objetos mediante peticiones debemos seguir el siguiente flujo de trabajo.
