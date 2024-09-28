@@ -57,6 +57,8 @@ Las anotaciones son:
 - @PutMapping
 - @DeleteMapping
 
+En ellas debemos especificar si atienden a una url concreta distinta a la raiz.
+![imagen](https://github.com/user-attachments/assets/c9e7d0cf-921c-4653-9991-34376c5d5114)
 
 # 📌 Creando objetos mediante peticiones POST.
 Para configurar la creación de objetos mediante peticiones debemos seguir el siguiente flujo de trabajo.
