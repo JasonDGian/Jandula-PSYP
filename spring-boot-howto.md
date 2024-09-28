@@ -24,18 +24,28 @@ public class Controller
 ![imagen](https://github.com/user-attachments/assets/236117d1-19e6-43f4-88d8-cfa87ee1e1c7)
 
 
-## Explicación.
+## 🔹 Explicación base.
 `@RestController` 
 <img align="right" height="200" src="https://github.com/user-attachments/assets/a2c0b328-f409-4f0b-ba36-074f5ef600e3"><img>  
-Declara la clase como un controlador en Spring que maneja solicitudes HTTP, combinando la funcionalidad de @Controller y @ResponseBody. Esto significa que los métodos dentro de la clase devolverán directamente datos en lugar de una vista.  
-   
+Declara la clase como un controlador en Spring que maneja solicitudes HTTP, combinando la funcionalidad de `@Controller` y `@ResponseBody`. Esto significa que los métodos dentro de la clase devolverán directamente datos en lugar de una vista.  
    
 Al combinarlo con la anotación `@RequestMapping("/v1")`, se define una **URL base** para todas las rutas dentro de esta clase. Es decir, todas las rutas adicionales definidas en esta clase tendrán este prefijo en la URL.   
 Por ejemplo, si dentro de la clase defines una ruta `@GetMapping("/items")`, la URL completa sería `/v1/items`.
 
-
 `@RequestMapping("/test")`
 Esta anotación define que el método que sigue se va a invocar cuando se realice una solicitud a la URL o endpoint '/test'.   
-@RequestMapping se utiliza para mapear rutas específicas a los métodos de un controlador. En este caso, cualquier solicitud HTTP que vaya a /test será manejada por el método que viene a continuación.
+`@RequestMapping` se utiliza para mapear rutas específicas a los métodos de un controlador. En este caso, cualquier solicitud HTTP que vaya a /test será manejada por el método que viene a continuación.
 
-
+## 🔹 Mapear peticiones especificas.
+Es posible mapear peticiones especificas y responder de manera distintas segun cuales estas sean.   
+   
+Ejemplo:   
+Esta petición responde solo a peticiones de tipo GET.   
+En la anotación `@RequestMapping` incluimos la definición de la url a la que responde y el tipo de petición.   
+```java
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String helloG()
+	{
+		return "<h1>Holla!</h1>";
+	}
+```
