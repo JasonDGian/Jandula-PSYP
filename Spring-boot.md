@@ -8,6 +8,9 @@ https://spring.io/
 Spring Boot es un **sub-framework** basado en Spring.
 Dispone de algunas caracteristicas que nos permiten desarrollar aplicaciones de manera acelerada. Ofrece un sistema de autoconfiguración y "Anotaciones". Es facil de configurar y es genial
 con el uso de Stand-alone APIs.
+
+![imagen](https://github.com/user-attachments/assets/2834c714-8e95-41f2-9a98-60baee6bed7b)
+
    
 **Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.**
 
@@ -17,10 +20,8 @@ Una de las principales características del framework Spring Boot es permite la 
 ## 🔹 IOC - Inversion of Control.
 En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
 
-
-## 🔹 Spring Boot Container.
-El contenedor de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
-
+### ▫️ IOC Container.
+El contenedor IOC de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
 
 ## 🔹 Rest Controller.
 En Spring Boot, un **REST Controller** es una clase que se encarga de manejar las solicitudes HTTP en una aplicación web RESTful. Se utiliza la anotación `@RestController`, que combina las anotaciones `@Controller` y `@ResponseBody`. Esto significa que los métodos de la clase devolverán directamente los datos en formato JSON o XML, sin necesidad de usar una vista.
