@@ -60,6 +60,8 @@ Las anotaciones son:
 En ellas debemos especificar si atienden a una url concreta distinta a la raiz.   
 ![imagen](https://github.com/user-attachments/assets/c9e7d0cf-921c-4653-9991-34376c5d5114)
 
+--- 
+TODO - POR TERMINAR.
 # 📌 Creando objetos mediante peticiones POST.
 Para configurar la creación de objetos mediante peticiones debemos seguir el siguiente flujo de trabajo.
 1. Definir el objeto.
@@ -86,8 +88,8 @@ Luego de crear un objeto, debes definir un controlador en Spring Boot que maneje
         return persona;
     }
 ```
-
-
+TODO - POR TERMINAR.
+--- 
 
 
 # 📌 Obtener datos de una petición.
