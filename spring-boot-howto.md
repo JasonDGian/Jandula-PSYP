@@ -98,8 +98,7 @@ Para obtener datos desde el body lo hacemos mediante la anotación - **`@Request
 Este es útil cuando la petición está formateada en XML o en JSON.    
 
 ### ▫️ Mapeado a objeto.
-Al recibir cuerpos en formato JSON o XML podemos mapearlos directamente a objetos java.   
-En este ejemplo recibimos un objeto JSON que luego se mapea automáticamente a un objeto JAVA (clase Jugador).
+Al recibir cuerpos en formato JSON o XML, podemos mapearlos directamente a objetos Java. En este ejemplo, un objeto JSON se convierte automáticamente en una instancia de la clase `Jugador`.
 ```java
 @PostMapping(value = "/player")
 public String addNewPlayer( @RequestBody Jugador jugador) {
@@ -115,6 +114,15 @@ Si no conocemos la estructura exacta del JSON, podemos usar un Map<String, Objec
 @PostMapping("/player")
 public String addPlayer(@RequestBody Map<String, Object> playerData) {
     return "Datos recibidos: " + playerData;
+}
+```
+
+### ▫️ Uso de valores brutos de un JSON (Formato String).
+Podemos obtener el contenido del body como una cadena String, lo que es útil cuando queremos procesar el contenido en bruto.
+```java
+@PostMapping("/raw")
+public String rawBody(@RequestBody String rawBody) {
+    return "Cuerpo sin procesar: " + rawBody;
 }
 ```
 
