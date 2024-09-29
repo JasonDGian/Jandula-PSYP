@@ -90,8 +90,45 @@ Luego de crear un objeto, debes definir un controlador en Spring Boot que maneje
 
 
 
+# 📌 Obtener datos de una petición.
+En Spring Boot, podemos extraer datos de una petición HTTP de varias formas utilizando anotaciones específicas.
 
+## 🔹 Obtener datos desde el body.
+Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**.    
+Este es útil cuando la petición está formateada en XML o en JSON.    
 
+### ▫️ Mapeado a objeto.
+Al recibir cuerpos en formato JSON o XML podemos mapearlos directamente a objetos java.   
+En este ejemplo recibimos un objeto JSON que luego se mapea automáticamente a un objeto JAVA (clase Jugador).
+```java
+@PostMapping(value = "/player")
+public String addNewPlayer( @RequestBody Jugador jugador) {
+	// Logica de uso del objeto: Aqui podemos interactuar con los valores
+	// del objeto JSON que han sido instanciados en un objeto JAVA.
+	return "Objeto creado \n" + jugador.toString();
+}
+```
+
+### ▫️ Uso de valores de un JSON dinamico.
+Si no conocemos la estructura exacta del JSON, podemos usar un Map<String, Object> para mapear datos dinámicos. En este caso, Spring Boot convertirá el JSON en un mapa, donde las claves del JSON serán las claves del mapa y sus valores correspondientes los valores del JSON.
+```java
+@PostMapping("/player")
+public String addPlayer(@RequestBody Map<String, Object> playerData) {
+    return "Datos recibidos: " + playerData;
+}
+```
+
+---
+## 🔹 Obtener datos desde el header.
+Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
+
+---
+## 🔹 Obtener datos desde parametros.
+Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
+
+---
+## 🔹 Obtener datos desde el path.
+Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
 
 
 
