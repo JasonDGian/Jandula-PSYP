@@ -1,10 +1,10 @@
-package com._dam.ejercicio_pag29;
+package ies.jandula.ejercicio_pagina_29;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EjercicioPag29ApplicationTests {
+class EjercicioPagina29ApplicationTests {
 
 	@Test
 	void contextLoads() {
