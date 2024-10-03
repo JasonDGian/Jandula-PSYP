@@ -81,6 +81,9 @@ Este seria el repositorio del script oficial. -> Actualmente me da error por alg
 https://github.com/spring-projects/spring-session/blob/main/spring-session-jdbc/src/main/resources/org/springframework/session/jdbc/schema-mysql.sql
 
 
+>[!CAUTION]
+>Si utilizas Spring Boot como base, la creación de esta tabla se realizará automaticamente siempre y cuando se incluya la linea `store-type: jdbc` En application.yaml
+
 **Tabla por defecto para MySQL:**
 ```mysql
 CREATE TABLE SPRING_SESSION (
