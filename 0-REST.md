@@ -8,7 +8,9 @@ Una de las ideas principales de REST es tratar todos los URLs de un servidor com
 >[!NOTE]
 > Es el estándar de comunicación más común entre dispositivos por internet.
   
-### 🔹 ¿Qué es un servicio HTTP?
+### 🔹 ¿Qué es un servicio HTTP?     
+    
+<img height="250" align="right" src="https://github.com/user-attachments/assets/7b6ec48f-485c-466b-b989-31f8b8464b5c">    
 Un servicio HTTP es una interfaz que permite la comunicación entre un cliente y un servidor mediante peticiones y respuestas utilizando el protocolo HTTP.
   
 - Hoy en día, las aplicaciones funcionan mediante la arquitectura cliente-servidor. Para recibir información y resultados de operaciones, la aplicación "ataca" a un servidor.
@@ -17,12 +19,12 @@ Un servicio HTTP es una interfaz que permite la comunicación entre un cliente y
   
 El proceso de exposición y creación de estos servicios está regulado por la **convención REST**, que se basa en principios como la statelessness y el uso de recursos identificados por URLs.
   
-![imagen](https://github.com/user-attachments/assets/48140efb-4645-416d-b561-d7de8f708a1f)
+
 
 
 ### 🔹 Entonces... ¿Qué es REST? 
-REST o **Representational State Transfer** es una convención para servicios HTTP que proporciona principios para realizar operaciones CRUD.   
-Las API que respetan las reglas que REST propone se conocen como **RESTful API**.
+REST o **Representational State Transfer** es una convención para servicios HTTP que proporciona principios para realizar operaciones CRUD.
+Las API que respetan las reglas REST se conocen como **RESTful API**.
 
 **Caracteristicas principales:**   
 - *REST* es una interfaz para interconectar distintos sistemas mediante HTTP.
@@ -35,11 +37,11 @@ Las API que respetan las reglas que REST propone se conocen como **RESTful API**
 > REST nace como alternativa a SOAP y facilita en gran medida el desarrollo de servicios y API REST.
 
 ## 📍 RESTful APIs.
-Una RESTful API organiza sus recursos en `URI`s especificos que diferencian a distintos tipos de recursos del servidor.  
-Un cliente interactua con un recurso lanzando una petición al `ENDPOINT` que el servidor expone a través de `HTTP` para dicho recurso.
-Las peticiones tienen un formato especifico.
 
-![imagen](https://github.com/user-attachments/assets/4b140f3c-f8c6-466f-9021-89c57060aa68)
+Una RESTful API organiza sus recursos en `URIs` especificos que diferencian a distintos tipos de recursos y potenciales acciones del servidor. 
+Un cliente interactua con un recurso lanzando una petición al `ENDPOINT` que el servidor expone a través de `HTTP` para dicho recurso. Las peticiones tienen un formato especifico.
+
+<!--  [imagen](https://github.com/user-attachments/assets/4b140f3c-f8c6-466f-9021-89c57060aa68) -->
 
 ### 🔹 Peticiones.  
 Para interactuar con el servidor, un cliente envia peticiones.
@@ -145,5 +147,4 @@ Los recursos se identifican mediante URIs (Identificadores Uniformes de Recursos
 Normalmente, un recurso es **algo que puede ser almacenado en un ordenador y representado como un flujo de bits**: un documento, una fila en una base de datos o el resultado de ejecutar un algoritmo.
 La arquitectura REST trata todo su contenido como un recurso, que incluye páginas HTML, imágenes, archivos de texto, videos, etc. 
 
-## 📍 ¿Qué tipos de parámetros existen?
 
