@@ -40,8 +40,10 @@ Lo primero es agregar las dependencias necesarias calculadas en base al proyecto
 </dependency>
 ```
 
-**Por Spring Initializr**
-![imagen](https://github.com/user-attachments/assets/6125b98d-13e5-4d9a-8c56-07721ca2e256)
+**Por Spring Initializr**   
+
+![imagen](https://github.com/user-attachments/assets/6125b98d-13e5-4d9a-8c56-07721ca2e256)   
+   
 
 
 ## 🔹 Configurar la BBDD.
