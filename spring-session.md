@@ -62,15 +62,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
  
-**Bloque de configuración de sesión.**   
+**Bloque de configuración de sesión.**      
 ```yaml
   session:
     store-type: jdbc  # Especifica el tipo de almacenamiento usado para la sesión. jdbc = en bbdd anexa.
     jbdc.table-name: SPRING_SESSION # Indica el nombre de la tabla donde se guardaran los datos de sesión. Se puede especificar una tabla distinta de desearlo.
 
 ```
-
-**Ejemplo completo.**
+   
+**Ejemplo completo.**    
 Ejemplo de fichero application.yaml con configuración basica de Spring Data JPA y Spring Session para uso de BBDD.
 ```yaml
 spring:
