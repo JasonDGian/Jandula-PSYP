@@ -104,7 +104,7 @@ public class SessionConfig {
 }
 ```
 
-**¿Qué es una clase de configuración?**
+**¿Qué es una clase de configuración?**   
 En el contexto de Spring Session, una clase de configuración es una clase que se utiliza para definir y configurar aspectos específicos del manejo de sesiones en una aplicación Spring. 
 
 
