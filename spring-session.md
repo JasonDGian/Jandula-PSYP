@@ -16,7 +16,7 @@ lugar de guardarla en el servidor, se guarda en un lugar externo, como una base 
 Esto permite que, si la aplicación tiene varias instancias (como en una nube), todas compartan la misma sesión de usuario, sin importar en cuál servidor esté trabajando en ese momento
 
 **¿Qué es REDIS?**
-Redis es una herramienta poderosa y eficiente para gestionar datos en memoria y es muy utilizada en aplicaciones que requieren un rendimiento rápido.
+Redis es una herramienta poderosa y eficiente para gestionar datos en memoria y es muy utilizada en aplicaciones que requieren un rendimiento rápido. **Es una alternativa al uso de bases de datos como almacén de datos de sesión**.
    
 # 📌 ¿Cómo se usa Spring Session?
 
@@ -45,7 +45,7 @@ Lo primero es agregar las dependencias necesarias calculadas en base al proyecto
 ![imagen](https://github.com/user-attachments/assets/6125b98d-13e5-4d9a-8c56-07721ca2e256)   
    
 
-## 🔹 Configurar la BBDD.
+## 🔹 Configurar la conexión a BBDD.
 Configura tu conexión a la base de datos en el archivo `application.yaml`.
 
 ```yaml
