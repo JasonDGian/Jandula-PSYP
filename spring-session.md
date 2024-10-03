@@ -13,6 +13,10 @@ Spring Session se encarga de manejar las sesiones de los usuarios en una aplicac
 de un usuario (como su información de inicio de sesión) se guarda en el servidor donde está corriendo la aplicación. Con Spring Session, en 
 lugar de guardarla en el servidor, se guarda en un lugar externo, como una base de datos o `Redis`.
 
+<p align="center" > 
+<img src="https://github.com/user-attachments/assets/e5c5efd4-0c9c-41ea-a9af-fb30644c0269">
+</p>
+
 Esto permite que, si la aplicación tiene varias instancias (como en una nube), todas compartan la misma sesión de usuario, sin importar en cuál servidor esté trabajando en ese momento
 
 **¿Qué es REDIS?**
