@@ -53,26 +53,27 @@ Ejemplo de fichero application.yaml con configuración basica de Spring Data JPA
 ```yaml
 spring:
   session:
-    store-type: jdbc  # Especifica que el almacenamiento de sesiones se realizará en la base de datos mediante JDBC.
+    store-type: jdbc  # Almacenamiento de sesiones en la base de datos mediante JDBC.
     jdbc:
-      table-name: SPRING_SESSION  # Nombre de la tabla en la base de datos donde se guardarán los datos de sesión. Se puede cambiar si se desea usar una tabla diferente.
+      table-name: SPRING_SESSION  # Tabla para almacenar datos de sesión; se puede cambiar si se desea.
 
   jpa:
     hibernate:
-      ddl-auto: create  # Indica a Hibernate que debe crear el esquema de la base de datos al iniciar la aplicación.
-    show-sql: true  # Habilita el registro de las sentencias SQL ejecutadas, útil para la depuración y el desarrollo.
+      ddl-auto: create  # Crea el esquema de la base de datos al iniciar la aplicación.
+    show-sql: true  # Habilita el registro de las sentencias SQL para depuración.
 
   datasource:
-    url: jdbc:mysql://localhost:3306/incidencias  # URL de conexión a la base de datos MySQL, incluyendo el nombre de la base de datos 'incidencias'.
-    username: root  # Nombre de usuario utilizado para la conexión a la base de datos.
-    password: 1234  # Contraseña asociada al usuario especificado para la conexión.
-    driver-class-name: com.mysql.cj.jdbc.Driver  # Clase del controlador JDBC que permite a Spring interactuar con MySQL.
+    url: jdbc:mysql://localhost:3306/incidencias  # URL de conexión a la base de datos MySQL.
+    username: root  # Usuario para la conexión a la base de datos.
+    password: 1234  # Contraseña del usuario especificado.
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Controlador JDBC para interactuar con MySQL.
 ```
 
 ## 🔹 Crear Tablas para la Sesión
 Spring Session utiliza tablas en la base de datos para almacenar las sesiones. Debes crear las tablas necesarias en tu base de datos. 
 Puedes utilizar el esquema SQL proporcionado por Spring Session.    
-Ejemplo para MySQL:
+
+**Tabla por defecto para MySQL:**
 ```mysql
 CREATE TABLE spring_session (
     primary_id VARCHAR(36) NOT NULL,
@@ -89,22 +90,22 @@ CREATE TABLE spring_session (
 >[!CAUTION]
 >Este esquema puede variar dependiendo de la base de datos que estés utilizando, así que asegúrate de consultar la documentación oficial de Spring Session para obtener el esquema correcto.
 
-## 🔹 Habilitar la sesión de spring `Spring Session`.
-Habilita Spring Session en tu aplicación con la anotación `@EnableJdbcHttpSession` en tu clase de configuración:
+## 🔹 Configurar el manejo de sesión de `Spring Session`.
+Habilita Spring Session en tu aplicación con la anotación `@EnableJdbcHttpSession` en tu clase de configuración.
 
 ```java
-  import org.springframework.context.annotation.Configuration;
-import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.session.data.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 
 @Configuration
-@EnableJdbcHttpSession
+@EnableJdbcHttpSession // Permite el manejo de sesiones a través de JDBC
 public class SessionConfig {
-    // Puedes configurar parámetros adicionales aquí si es necesario
+    // Opcional: Puedes definir configuraciones adicionales aquí
 }
 ```
 
-
-
+**¿Qué es una clase de configuración?**
+En el contexto de Spring Session, una clase de configuración es una clase que se utiliza para definir y configurar aspectos específicos del manejo de sesiones en una aplicación Spring. 
 
 
 
