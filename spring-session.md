@@ -45,7 +45,6 @@ Lo primero es agregar las dependencias necesarias calculadas en base al proyecto
 ![imagen](https://github.com/user-attachments/assets/6125b98d-13e5-4d9a-8c56-07721ca2e256)   
    
 
-
 ## 🔹 Configurar la BBDD.
 Configura tu conexión a la base de datos en el archivo `application.yaml`.
 
@@ -61,19 +60,7 @@ spring:
     maximum-pool-size: 5 # Especifica el número máximo de conexiones permitidas en el pool de conexiones simultáneas.
 ```
 
-## 🔹 Habilitar la sesión de spring `Spring Session`.
-Habilita Spring Session en tu aplicación con la anotación `@EnableJdbcHttpSession` en tu clase de configuración:
 
-```java
-  import org.springframework.context.annotation.Configuration;
-import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
-
-@Configuration
-@EnableJdbcHttpSession
-public class SessionConfig {
-    // Puedes configurar parámetros adicionales aquí si es necesario
-}
-```
 
 ## 🔹 Crear Tablas para la Sesión
 Spring Session utiliza tablas en la base de datos para almacenar las sesiones. Debes crear las tablas necesarias en tu base de datos. 
@@ -94,6 +81,21 @@ CREATE TABLE spring_session (
 
 >[!CAUTION]
 >Este esquema puede variar dependiendo de la base de datos que estés utilizando, así que asegúrate de consultar la documentación oficial de Spring Session para obtener el esquema correcto.
+
+## 🔹 Habilitar la sesión de spring `Spring Session`.
+Habilita Spring Session en tu aplicación con la anotación `@EnableJdbcHttpSession` en tu clase de configuración:
+
+```java
+  import org.springframework.context.annotation.Configuration;
+import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
+
+@Configuration
+@EnableJdbcHttpSession
+public class SessionConfig {
+    // Puedes configurar parámetros adicionales aquí si es necesario
+}
+```
+
 
 
 
