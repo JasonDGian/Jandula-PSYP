@@ -47,20 +47,49 @@ Lo primero es agregar las dependencias necesarias calculadas en base al proyecto
 
 ## 🔹 Configurar la conexión a BBDD.
 Configura tu conexión a la base de datos en el archivo `application.yaml`.
-
+Vamos por partes.
+   
+**Bloque de configuración de origen de datos.**     
+Este bloque especifica la base de datos de ataque y que controlador emplear para interactuar con ella.   
 ```yaml
 spring:
   jpa.hibernate.ddl-auto: create # Configura cómo se debe gestionar el esquema de la base de datos.
+  jpa.show-sql: true # Permite el logueado de sentencias SQL.
   datasource:
-    url: jdbc:mysql://localhost:3306/universidad # URL de conexión a la base de datos MySQL.
+    url: jdbc:mysql://localhost:3306/incidencias # URL de conexión a la base de datos MySQL.
     username: root # Nombre de usuario para conectarse a la base de datos.
     password: 1234 # Contraseña correspondiente al usuario especificado.
-    hikari: # Hikari es un mecanismo de eficiencia de conexiones. Cnoocido como "Pool de conexiones".
-    connection-timeout: 60000 # Establece el tiempo máximo de espera en milisegundos (60 segundos) para obtener una conexión antes de lanzar un error.
-    maximum-pool-size: 5 # Especifica el número máximo de conexiones permitidas en el pool de conexiones simultáneas.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+```
+ 
+**Bloque de configuración de sesión.**   
+```yaml
+  session:
+    store-type: jdbc  # Especifica el tipo de almacenamiento usado para la sesión. jdbc = en bbdd anexa.
+    jbdc.table-name: SPRING_SESSION # Indica el nombre de la tabla donde se guardaran los datos de sesión. Se puede especificar una tabla distinta de desearlo.
+
 ```
 
+**Ejemplo completo.**
+Ejemplo de fichero application.yaml con configuración basica de Spring Data JPA y Spring Session para uso de BBDD.
+```yaml
+spring:
+  session:
+    store-type: jdbc  # Especifica que el almacenamiento de sesiones se realizará en la base de datos mediante JDBC.
+    jdbc:
+      table-name: SPRING_SESSION  # Nombre de la tabla en la base de datos donde se guardarán los datos de sesión. Se puede cambiar si se desea usar una tabla diferente.
 
+  jpa:
+    hibernate:
+      ddl-auto: create  # Indica a Hibernate que debe crear el esquema de la base de datos al iniciar la aplicación.
+    show-sql: true  # Habilita el registro de las sentencias SQL ejecutadas, útil para la depuración y el desarrollo.
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/incidencias  # URL de conexión a la base de datos MySQL, incluyendo el nombre de la base de datos 'incidencias'.
+    username: root  # Nombre de usuario utilizado para la conexión a la base de datos.
+    password: 1234  # Contraseña asociada al usuario especificado para la conexión.
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Clase del controlador JDBC que permite a Spring interactuar con MySQL.
+```
 
 ## 🔹 Crear Tablas para la Sesión
 Spring Session utiliza tablas en la base de datos para almacenar las sesiones. Debes crear las tablas necesarias en tu base de datos. 
