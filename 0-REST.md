@@ -1,7 +1,4 @@
 # :pushpin: Entendiendo REST.
-
-
-## 📍 ¿Qué es REST?
 REST es básicamente un conjunto de reglas para construir servicios HTTP.
 Una de las ideas principales de REST es tratar todos los URLs de un servidor como puntos de acceso para los distintos recursos que almacena.
 
