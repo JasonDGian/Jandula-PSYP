@@ -12,8 +12,11 @@ En la URL donde se envia la petición se pueden incluir parametros incrustados.
 Además, lleva una cabecera con metadatos, y puede llevar un cuerpo.    
 [Peticiones HTTP](https://github.com/JasonDGian/Jandula-PSYP/blob/main/0.1-Peticiones.md)   
 
-## 📍 ¿Qué es REST?
+## 📍 ¿Qué es Spring?
+Spring es un framework centrado en crear aplicaciones de calibre comercial con Java. Esto significa que con este framework podemos evitar muchisimo "Boilerplate code" que ya no es necesario escribir a mano. Spring ofrece además técnicas IOC (Inversion of Control) y posibilita el uso de Transacciones.   
+[Spring & Spring Boot Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/Spring-boot.md)
 
-## 📍 ¿Qué es REST?
+## 📍 Fundamentos de Spring Boot.
+
 
 ## 📍 ¿Qué es REST?
