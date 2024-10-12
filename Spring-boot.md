@@ -3,78 +3,34 @@ Spring es un framework centrado en crear aplicaciones de calibre comercial con J
 **Spring ofrece además técnicas IOC (Inversion of Control) y posibilita el uso de Transacciones.**
    
 https://spring.io/   
+
+# 📌 Sub-marcos y componentes de Spring.
+Una de las cosas que hace de Spring una autentica maravilla son las capas y marcos de trabajo adicionales que proporciona al programador.   
+Entre ellas podemos mencionar las siguientes:   
+1. **Spring Boot**: Ayuda a crear aplicaciones Java de forma rápida y sin tantas configuraciones.
+2. **Spring Data JPA**: Facilita trabajar con bases de datos, haciendo que sea más fácil guardar y leer datos.
+3. **Spring Security**: Protege las aplicaciones, controlando quién puede acceder y qué pueden hacer.
+4. **Spring MVC**: Organiza el código para manejar solicitudes web y mostrar páginas.
+5. **Spring Session**: Gestiona las sesiones de usuarios, manteniéndolas activas aunque cambien de servidor.
+6. **Spring MySQL Driver**: Es la combinación de Spring con el driver JDBC de MySQL para permitir la conexión y operaciones con bases de datos MySQL desde una aplicación Java/Spring.
+
+## 🔹 Spring Boot
+Es un marco de trabajo que facilita la creación de aplicaciones Java, especialmente aplicaciones web. Spring Boot te permite empezar rápidamente con configuraciones mínimas, ya que proporciona configuraciones predeterminadas, sin tener que escribir mucho código o configuraciones adicionales.
+
+## 🔹 Spring Data JPA
+Es una herramienta dentro del ecosistema de Spring que simplifica la interacción con bases de datos. Usa JPA (Java Persistence API) para hacer que trabajar con bases de datos relacionales sea más fácil, permitiendo realizar consultas y operaciones en tablas de manera sencilla, con poco código.
+
+## 🔹 Spring Security
+Es un módulo que se encarga de la seguridad en aplicaciones Spring. Ayuda a proteger tu aplicación controlando el acceso a las rutas, gestionando la autenticación de usuarios (por ejemplo, inicio de sesión) y asegurando que los datos estén protegidos.
+
+## 🔹 Spring MVC
+Es un modelo que sigue el patrón de arquitectura "Modelo-Vista-Controlador" para crear aplicaciones web. Te permite manejar las solicitudes HTTP, procesar datos en el servidor y devolver respuestas, normalmente en forma de páginas web.
+
+## 🔹 Spring Session
+Es un módulo que gestiona las sesiones de usuario de manera independiente del servidor de aplicaciones. Esto permite que las sesiones de los usuarios se mantengan a través de varios servidores o instancias, lo que es útil en aplicaciones distribuidas o cuando se usa un balanceador de carga.
+
+## 🔹 Spring MySQL Driver
+Spring MySQL Driver no es un componente oficial de Spring, pero generalmente se refiere al uso del conector JDBC de MySQL dentro de una aplicación Spring para interactuar con bases de datos MySQL.
+
+El MySQL JDBC Driver es una biblioteca que permite que las aplicaciones Java se conecten a bases de datos MySQL. En una aplicación Spring, este driver se incluye como dependencia (por ejemplo, en el archivo pom.xml si se usa Maven) para que la aplicación pueda realizar operaciones en la base de datos MySQL.
    
-# 📌 Spring boot.
-Spring Boot es un **sub-framework** basado en Spring.
-Dispone de algunas caracteristicas que nos permiten desarrollar aplicaciones de manera acelerada. Ofrece un sistema de autoconfiguración y "Anotaciones". Es facil de configurar y es genial
-con el uso de Stand-alone APIs.
-
-![imagen](https://github.com/user-attachments/assets/2834c714-8e95-41f2-9a98-60baee6bed7b)
-
-   
-**Al hablar de Spring Boot se mencionan ciertos terminos que es conveniente conocer.**
-
-## 🔹 Servidores incrustados. 
-Una de las principales características del framework Spring Boot es permite la ejecución de aplicaciones web sin necesidad de usar servidores de aplicaciones externos donde desplegarlas. Esto lo consigue mediante el uso de un contenedor incrustado en la misma aplicación (Tomcat, Jetty o Undertow). Estos contenedores vienen pre-configurados por defecto pero podemos modificar sus parametros si es necesario.
-
-## 🔹 IOC - Inversion of Control.
-IOC es un principio de diseño o técnica utilizada en el desarrollo de software para invertir el control del flujo de ejecución o las dependencias en una aplicación.
-En lugar de hacer que programador controle el flujo de la aplicacion y que objetos se crean y cuando, este entrega este control al contenedor Spring mediante el framework.
-
-### ▫️ IOC Container.
-El contenedor IOC de Spring es uno de los puntos centrales de Spring, se encarga de crear los objetos, conectarlos entre si, configurarlos y además controla los ciclos de vida de cada objeto mediante el patrón de Inyección de Dependencias. 
-
->[!NOTE]
-> No es una tecnología, ni una convención, sino una técnica que describe cómo los objetos reciben sus dependencias.
-
-## 🔹 Rest Controller.
-En Spring Boot, un **REST Controller** es una clase que se encarga de manejar las solicitudes HTTP en una aplicación web RESTful. Se utiliza la anotación `@RestController`, que combina las anotaciones `@Controller` y `@ResponseBody`. Esto significa que los métodos de la clase devolverán directamente los datos en formato JSON o XML, sin necesidad de usar una vista.
-   
-![imagen](https://github.com/user-attachments/assets/b3ca6d5c-89a1-4e9e-9f33-70e2020b1246)
-
-El concepto de REST Controller está relacionado con el concepto de Modelo-Vista-Controlador (MVC), pero se enfoca principalmente en la parte de controlador.  
-
-En el patrón MVC:
-- **Modelo**: Representa la lógica de negocio y los datos.
-- **Vista**: Se encarga de la presentación de los datos al usuario.
-- **Controlador**: Maneja las solicitudes y coordina entre el modelo y la vista.
-
-En el caso de un REST Controller, la vista se omite, ya que se devuelve directamente el modelo (datos) en formato JSON o XML. Esto permite que la lógica de la aplicación se enfoque en la gestión de datos y en cómo se exponen a los clientes, sin preocuparse por la presentación visual.
-
-
-
-
-
-# 📌 Anotaciones.
-En Spring Boot, las anotaciones son, "etiquetas" que preceden a las clases y otros elementos que definen cómo deben ser manejados por el contenedor de Spring. Estas anotaciones indican al contenedor qué clases deben ser tratadas como componentes, controladores, servicios, etc.
-
-
-
-## @Bean.
-Indica que un metodo produce una instancia que debe ser gestioanda pro el ecosistema pspinrg.   
-Se utilza dentro de clases con @Configuration para declara metodos que devuelvan instancias beans.
-   
-## @Configuration.
-Se utiliza para indicar una clase que declara uno o mas metodos @Bean. Estas clases se utilizan para definir la configuracion de la aplicacio ny gestionar la creacion de beans dentro del ex
-
-## @Autowired.
-Realiaza la inyeccion de dependencias de beansa gestionados por spring automaticamente.
-Se utiliza en campos metodos o constructoreds para indicar a spring que inyecte automaticamente un bean apropriado.
-
-## @Component
-
-@Service
-@Repository
-@Controller
-@ComponentScan
-@SpringBootApplication
-@RestController
-
-@RequestMapping, @GetMapping, @PostMapping,
-@PutMapping, @DeleteMapping
-
-@PathVariable y @RequestParam
-
-@EnableScheduling, @Scheduled
-@Transactional
-
