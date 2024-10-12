@@ -1,6 +1,29 @@
 # 📌 Fundamentos de Spring.
 Spring Boot utiliza una arquitectura de tres capas, donde se diferencian los controladores REST, la capa de acceso a datos y la lógica de negocio. En cada capa existen responsabilidades claramente definidas para asegurar una separación adecuada de preocupaciones.
 
+## 🔹 Arquitectura en 3 capas.
+La arquitectura de 3 capas en Spring Boot es un patrón de diseño que separa el código según su responsabilidad. Las clases se organizan por su función dentro de la aplicación, facilitando el mantenimiento y la claridad del sistema.
+
+
+
+<table>
+  <tr><td>🟤 <strong>PRESENTACIÓN</strong>. </td></tr>
+  <tr><td> - Aiende a las peticiones HTTP y responde a ellas. </br>
+    - Recibe los datos y los pasa a la caba de servicio. </br>
+    - Devuelve vistas en formato HTML o datos en formato JSON.
+</td></tr>
+  <tr><td>🔵 <strong>SERVICIO.</strong></tr>
+  <tr><td>- Contiene la lógica de negocio.</br>
+  - Procesa la información recibida de la capa de presentación.</br>
+  - Realiza las validaciones calculos y aplica las reglas de negocio.
+</td></tr>
+  <tr><td>🟣 <strong>ACCESO A DATOS.</strong></td></tr>
+  <tr><td>Esta capa es la que atiende a las peticiones HTTP y responde a ellas. Recibe los datos y los pasa a la caba de servicio. Devuelve vistas en formato HTML o datos en formato JSON.
+</td></tr>
+</table>
+
+<img src="https://github.com/user-attachments/assets/d6c7f7f5-219c-452a-af02-99ceae513f00">
+
 
 ## 🔹 Inicialización de proyectos.
 Para inicializar proyectos utilizamos **Spring Initializr** en www.start.spring.io. Esta herramienta facilita la configuración de las dependencias necesarias sin necesidad de editar manualmente el archivo POM en proyectos Maven. Además, si no tenemos Maven instalado, podemos usar spring.io para agregarlo como un ejecutable en la raíz del proyecto automaticamente.
@@ -40,4 +63,6 @@ Metodo @AutoWired.
 - Spring web: Starter para aplicaciones web como por ejemplo APIs REST o una aplicacion MVC con plantillas (necesitaria motor de plantillas como Thymeleaf).
 - MySQL Driver: Proporciona tecnicas de conexion y manipulacion para bases de datos MYSQL.
 - Spring jpa: Es el framework que facilita la interaccion con la base de datos evitando asi tener que escribir MySQL a pelo.
-![imagen](https://github.com/user-attachments/assets/9d0cf5cd-54c8-41e4-9e5c-bfbcfac800f2)
+
+![imagen](https://github.com/user-attachments/assets/9240861d-7ccc-45ee-a064-f0ae823f01a4)
+
