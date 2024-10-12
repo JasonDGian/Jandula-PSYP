@@ -17,7 +17,7 @@ Spring es un framework centrado en crear aplicaciones de calibre comercial con J
 [Spring Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/Spring-boot.md)
 
 ## 📍 ¿Qué es Spring Boot?
-Spring Boot es un componente que elabora sobre Spring Framework facilita el inicio rápido, con configuraciones automáticas para acelerar el desarrollo y es ideal para aplicaciones de microservicios y proyectos más ágiles.    
+Spring Boot es un componente que elabora sobre Spring Framework; facilita el inicio rápido, con configuraciones automáticas para acelerar el desarrollo y es ideal para aplicaciones de microservicios y proyectos más ágiles.    
 [Spring Boot Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/2-Spring-Boot.md)
 
 
