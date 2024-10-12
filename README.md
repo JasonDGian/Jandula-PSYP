@@ -14,9 +14,12 @@ Además, lleva una cabecera con metadatos, y puede llevar un cuerpo.
 
 ## 📍 ¿Qué es Spring?
 Spring es un framework centrado en crear aplicaciones de calibre comercial con Java. Esto significa que con este framework podemos evitar muchisimo "Boilerplate code" que ya no es necesario escribir a mano. Spring ofrece además técnicas IOC (Inversion of Control) y posibilita el uso de Transacciones.   
-[Spring & Spring Boot Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/Spring-boot.md)
+[Spring Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/Spring-boot.md)
 
 ## 📍 Fundamentos de Spring Boot.
+Spring Boot es un componente que elabora sobre Spring Framework facilita el inicio rápido, con configuraciones automáticas para acelerar el desarrollo y es ideal para aplicaciones de microservicios y proyectos más ágiles.
+[Spring Boot Framework](https://github.com/JasonDGian/Jandula-PSYP/blob/main/2-Spring-Boot.md)
+
 
 
 ## 📍 ¿Qué es REST?
