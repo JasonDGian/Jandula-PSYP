@@ -3,8 +3,9 @@ Spring Boot retoma la arquitectura en 3 capas de Spring y proporciona herramient
 Entre las herramientas adicionales encontramos los estereotipos especificos de Spring Boot.
 
 ## 🔹 Estereotipos de Spring y Spring Boot.
-Aunque Spring ya ofrece varios estereotipos nativos (como `@Component`, `@Service`, `@Repository`, `@Controller`), Spring Boot añade otras anotaciones que facilitan la configuración y simplifican la creación de aplicaciones, como `@SpringBootApplication` y `@RestController`.
-
+Aunque Spring ya ofrece varios estereotipos nativos (como `@Component`, `@Service`, `@Repository`, `@Controller`), Spring Boot añade otras anotaciones que facilitan la configuración y simplifican la creación de aplicaciones, como `@SpringBootApplication` y `@RestController`.   
+    
+    
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
