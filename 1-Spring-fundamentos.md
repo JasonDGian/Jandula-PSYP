@@ -5,7 +5,7 @@ Spring Boot utiliza una arquitectura de tres capas, donde se diferencian los con
 La arquitectura de 3 capas en Spring Boot es un patrón de diseño que separa el código según su responsabilidad. Las clases se organizan por su función dentro de la aplicación, facilitando el mantenimiento y la claridad del sistema.
    
 <p align="center">
-  <img width="200px" align="right" src="https://github.com/user-attachments/assets/cacf5340-8afd-4e13-add6-399acc3ae98f">    
+  <img src="https://github.com/user-attachments/assets/cacf5340-8afd-4e13-add6-399acc3ae98f">    
 </p>
    
 <table>
