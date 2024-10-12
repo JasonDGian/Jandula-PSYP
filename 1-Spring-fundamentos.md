@@ -3,9 +3,11 @@ Spring Boot utiliza una arquitectura de tres capas, donde se diferencian los con
 
 ## 🔹 Arquitectura en 3 capas.
 La arquitectura de 3 capas en Spring Boot es un patrón de diseño que separa el código según su responsabilidad. Las clases se organizan por su función dentro de la aplicación, facilitando el mantenimiento y la claridad del sistema.
-
-
-
+   
+<p align="center">
+  <img width="200px" align="right" src="https://github.com/user-attachments/assets/cacf5340-8afd-4e13-add6-399acc3ae98f">    
+</p>
+   
 <table>
   <tr><td>🟤 <strong>PRESENTACIÓN</strong>. </td></tr>
   <tr><td> - Aiende a las peticiones HTTP y responde a ellas. </br>
@@ -18,11 +20,17 @@ La arquitectura de 3 capas en Spring Boot es un patrón de diseño que separa el
   - Realiza las validaciones calculos y aplica las reglas de negocio.
 </td></tr>
   <tr><td>🟣 <strong>ACCESO A DATOS.</strong></td></tr>
-  <tr><td>Esta capa es la que atiende a las peticiones HTTP y responde a ellas. Recibe los datos y los pasa a la caba de servicio. Devuelve vistas en formato HTML o datos en formato JSON.
+  <tr><td>- Maneja la interacción con la base de datos.</br>
+    - Realiza las operaciones CRUD a través de consultas y transacciones.</br>
+    - Encapsula el acceso a los datos, proporcionando una abstracción a la capa de servicio.
+</td></tr>
+  </tr>
+  <tr><td>🟡 <strong>CAPA DE CONFIGURACION - Capa adicional.</strong></td></tr>
+  <tr><td>- Clases genéricas que no encajan específicamente en otras capas, pero que son gestionadas por el contenedor de Spring.</br>
+    - Pueden incluir componentes reutilizables, servicios auxiliares o configuraciones personalizadas.
 </td></tr>
 </table>
 
-<img src="https://github.com/user-attachments/assets/d6c7f7f5-219c-452a-af02-99ceae513f00">
 
 
 ## 🔹 Inicialización de proyectos.
