@@ -15,8 +15,9 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long>
 	// Metodo de busqueda personalizado. (nombre por convencion)
 	// Parece que no hace falta implementar el metodo en cuestión y dejar que Sprind Data se encargue de todo. 
 	// Flipante.
-	Jugador findByDorsal( int dorsal);
+	Jugador findByDorsal(int dorsal);
 	
+	Jugador findAllByGole(int goles);
 	
 	// Metodo vacio porque no devuelve nada (duh) -> Transactional porque debe de estar envuelto en transaccion sql.
 	@Transactional

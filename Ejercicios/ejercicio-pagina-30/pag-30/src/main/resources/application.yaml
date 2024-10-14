@@ -1,0 +1,16 @@
+spring:
+  session:
+    store-type: jdbc  # Almacenamiento de sesiones en la base de datos mediante JDBC.
+    jdbc:
+      table-name: SPRING_SESSION  # Tabla para almacenar datos de sesión; se puede cambiar si se desea.
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # Crea el esquema de la base de datos al iniciar la aplicación.
+    show-sql: true  # Habilita el registro de las sentencias SQL para depuración.
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/sessionTest  # URL de conexión a la base de datos MySQL.
+    username: root  # Usuario para la conexión a la base de datos.
+    password: 1234  # Contraseña del usuario especificado.
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Controlador JDBC para interactuar con MySQL.
