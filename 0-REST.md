@@ -43,7 +43,7 @@ Un cliente interactua con un recurso lanzando una petición al `ENDPOINT` que el
 ### 🔹 Peticiones.  
 Para interactuar con el servidor, un cliente envia peticiones.
 Las peticiones están formadas de la siguiente manera.   
-> Petición = `VERBO` + `ENDPOINT` + `HEADER` + `CUERPO`    
+**Petición** = `VERBO` + `ENDPOINT` + `HEADER` + `CUERPO`    
     
 - **Verbo o Metodo.**      
 Define la acción que sucede con la petición.    
