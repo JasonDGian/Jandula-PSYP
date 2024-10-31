@@ -142,6 +142,22 @@ Para obtener datos desde el body lo hacemos mediante la anotación - **`@Request
 Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
 
 
+--
+## 🔹 Obtener valores desde variable en YAML.
+1. Definir el valor en el fichero yaml.
+	```yaml
+ 	reaktor:
+  	  urlCors: http://localhost:8888/incidencias  		
+	``` 
+2. Importar el valor en la clase donde deseamos usarla
+	```java
+ 	 // Importamos la utilidad spring.
+ 	 import org.springframework.beans.factory.annotation.Value;
+ 
+ 	 // Importamos el valor.
+	 @Value("${urlCors}")
+ 	```
+
 
 
 
