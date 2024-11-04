@@ -131,7 +131,7 @@ public String rawBody(@RequestBody String rawBody) {
 
 ---
 ## 🔹 Obtener datos desde el header.
-Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
+Para obtener datos desde el header lo hacemos mediante la anotación - **`@RequestBody`**
 ```java
 // Metodo de petición POST que espera un cuerpo.
 @PostMapping
