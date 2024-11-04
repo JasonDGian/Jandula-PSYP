@@ -211,7 +211,8 @@ public int resta(@PathVariable int a, @PathVariable int b) {
 
  	```
 
-
+Crear la base de datos si no existe.
+url: jdbc:mysql://localhost:3306/matriculas_horarios?createDatabaseIfNotExist=true
 
 
    
