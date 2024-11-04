@@ -132,15 +132,36 @@ public String rawBody(@RequestBody String rawBody) {
 ---
 ## 🔹 Obtener datos desde el header.
 Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
+```java
+// Metodo de petición POST que espera un cuerpo.
+@PostMapping
+public int resta( @RequestHeader( value = "a" ) int a, @RequestHeader( value = "b") int b) 
+{
+	return a - b;
+}
+```
 
 ---
 ## 🔹 Obtener datos desde parametros.
-Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
-
+Para obtener datos desde los parametros de petición lo hacemos mediante la anotación - **`@RequestParam`**
+```java
+// Metodo de petición GET que espera dos parametros por query.
+@GetMapping
+public int resta( @RequestParam( value = "a" ) int a, @RequestParam( value = "b") int b) 
+{
+	return a - b;
+}
+```
 ---
 ## 🔹 Obtener datos desde el path.
-Para obtener datos desde el body lo hacemos mediante la anotación - **`@RequestBody`**
-
+Para obtener datos desde el path lo hacemos mediante la anotación - **`@PathVariable`**
+```java
+// Método de petición POST que espera dos parámetros en la URL como path variables.
+@PostMapping("/resta/{a}/{b}")
+public int resta(@PathVariable int a, @PathVariable int b) {
+    return a - b;
+}
+```
 
 --
 ## 🔹 Obtener valores desde variable en YAML.
