@@ -13,7 +13,7 @@ La estructura basica de un documento Swagger es la siguiente.
 - Bloque de defincion de objetos.
 
 
-## 📍 Bloque de metadatos.
+### 🔸 Bloque de metadatos.
 Toda documentación swagger debe incluir información acerca de la versión de la API empleada.
 ```yaml
 # Versión de la API
@@ -26,7 +26,7 @@ info:
   version: 0.1.2
 ```
 
-## 📍 Bloque de Servidores.
+### 🔸 Bloque de Servidores.
 La seccion de servidores especifica los servidores y las URL base para los recursos que se pueden llamar en la API. Se puede definir uno o más servidores y URLs
 ```yaml
 # Servidores de la API
@@ -45,7 +45,7 @@ servers:
 >  - url: https://api.example.com
 > ```
     
-## 📍 Bloque de recursos (endpoints).
+### 🔸 Bloque de recursos (endpoints).
 En esta sección se definen los puntos de ataque que sirven los recursos de la API y los metodos que estos atienden.
 ```yaml
 # Endpoints
@@ -67,7 +67,7 @@ paths:
                 items:
                   type: string
 ```
-## 📍 Bloque de definicion (objetos).
+### 🔸 Bloque de definicion (objetos).
 En el ultimo bloque se definen los objetos que empleamos en nuestros endpoints.
 ```yaml
 # Definicion de objetos
