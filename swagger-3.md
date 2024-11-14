@@ -67,8 +67,61 @@ paths:
                 items:
                   type: string
 ```
+## 📍 Bloque de definicion (objetos).
+En el ultimo bloque se definen los objetos que empleamos en nuestros endpoints.
+```yaml
+# Definicion de objetos
+components:
+  schemas:
+    Asignatura: # Objeto asignatura
+      type: object
+      properties:
+        identificador:
+          type: integer
+          format: int32
+        nombre:
+          type: string
+        apellidos:
+          type: string
+        correo:
+          type: string
+        telefono:
+          type: string
+        creditos:
+          type: integer
+          format: int32
+        horasSemanales:
+          type: integer
+          format: int32
+```
+  
+       
+--- 
+# 📌 Otras notas
 
-### 🔸 Media Type - Tipos de respuesta o petición.
+### 📍 Sobre-escribir servidores (override).
+Se pueden sobreescribir los servidores de escucha a nivel de Path.   
+Para ello usamos la siguiente sintaxis:
+```yaml
+servers:
+  - url: https://api.ejemplo.com/v1
+
+paths:
+  /alumnos:
+    description: Api de gestion de alumnos
+    servers:
+      - url: https://alumnos.ejemplo.com
+        description: Sobreescribe el servidor de escucha para las peticiones de '/alumnos'
+    ...
+
+/profesores:
+    get:
+      servers:
+        - url: https://profesores.ejemplo.com
+          description: Sobreescribe el servidor de escucha para las peticiones de '/profesores'
+```
+
+### 📍 Media Type - Tipos de respuesta o petición.
 En las respuestas o peticiones podemos definir el tipo de cuerpo o dato que utilizan.
 ```yaml
 paths:
@@ -95,15 +148,8 @@ paths:
                   fullTime: true
 ```
 
-    
---- 
-## 📍 Sobre-escribir servidores (override).
-Se pueden sobreescribir los servidores de escucha a nivel de Path.
 
-
-
-
-# 🟦 Definición de respuesta lista de objetos
+### 📍 Definición de respuesta lista de objetos
 ```yaml
   # Endpoint de alumnado
   /alumnado:
