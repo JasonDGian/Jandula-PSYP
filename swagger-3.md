@@ -172,3 +172,513 @@ paths:
                   $ref: "#/components/schemas/Alumno" # Referencia a la definicion del esquema alumno.
 ```
 
+### 📍 Parametros de peticiones.
+**Peticion con parametros**
+```yaml
+    get:
+      operationId: listarAlumnos
+      summary: Devuelve un listado de alumnos basado en un filtro
+      parameters:
+        - name: dni
+          in: query
+          description: DNI del alumno.
+          required: false
+          schema:
+            type: string       
+      responses:
+        200:
+          description: Listado obtenido con exito.
+          # Cuerpo de la respuesta
+          content:
+            # Indica una respuesta en formato Json
+            application/json:
+              schema:
+                # Establece una respuesta Array
+                type: array 
+                # Define el objeto del Array.
+                items:
+                  $ref: "#/components/schemas/Alumno" # Referencia a la definicion del esquema alumno.
+```
+
+
+
+**Ejemplo de descripcion**
+```yaml
+# Versión de la API
+openapi: 3.0.0
+
+# Información acerca del proyecto.
+info:
+  title: API-alumnado
+  description: API de gestión de alumnado, asignaturas y matriculadas.
+  version: 1.0.0
+  contact:
+    name: David Jason G
+    email: davjasg@gmail.com
+
+# Servidores que atienden
+servers: 
+  # Servidor de desarrollo y pruebas
+  - url: http://localhost:8080
+    description: Servidor de desarrollo
+
+# Recursos del servicio
+paths:
+
+  # Endpoint de alumnado
+  /alumnado:
+  
+    # Petición GET /alumnado
+    get:
+      operationId: listarAlumnos
+      summary: Devuelve un listado de alumnos basado en un filtro
+      # Parámetros de la petición
+      parameters:
+        # Parámetro 1
+        - name: dni
+          in: query
+          description: DNI del alumno.
+          required: false
+          schema:
+            type: string
+        # Parámetro 2
+        - name: nombre
+          in: query
+          description: Nombre del alumno.
+          required: false
+          schema:
+            type: string
+        # Parámetro 3
+        - name: apellido
+          in: query
+          description: Apellido del alumno.
+          required: false
+          schema:
+            type: string
+        # Parámetro 4
+        - name: telefono
+          in: query
+          description: Teléfono del alumno.
+          required: false
+          schema:
+            type: string
+        # Parámetro 5
+        - name: correo
+          in: query
+          description: Correo electrónico del alumno.
+          required: false
+          schema:
+            type: string
+        
+      # Respuestas de GET /alumnado.
+      responses:
+        200:
+          description: Listado obtenido con éxito.
+          # Cuerpo de la respuesta
+          content:
+            # Indica una respuesta en formato Json
+            application/json:
+              schema:
+                # Establece una respuesta Array
+                type: array 
+                # Define el objeto del Array.
+                items:
+                  $ref: "#/components/schemas/Alumno" # Referencia a la definición del esquema alumno.
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición POST /alumnado
+    post:
+      operationId: crearAlumno
+      summary: Recibe un json en el cuerpo y crea el alumno correspondiente.
+      # Cuerpo de la petición
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Alumno" # Referencia a la definición del esquema alumno.
+      # Respuestas que devuelve.
+      responses:
+        201:
+          description: Confirma la creación del nuevo alumno
+        401:
+          description: Error de parametros de entrada.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición PUT /alumnado
+    put:
+      operationId: actualizaAlumno
+      summary: Recibe un json en el cuerpo y actualiza el alumno correspondiente.
+      # Cuerpo de la petición
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Alumno" # Referencia a la definición del esquema alumno.
+      # Respuestas que devuelve.
+      responses:
+        200:
+          description: Confirma la actualización del nuevo alumno
+        404:
+          description: Informa de error - Alumno no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición DELETE /alumnado
+    delete:
+      operationId: borraAlumno
+      summary: Recibe un json en el cuerpo y borra el alumno correspondiente.
+      # Parámetros de la petición.
+      parameters:
+        - name: dni
+          in: query
+          description: DNI del alumno a borrar
+          required: true
+          schema:
+            type: string
+          
+      # Respuestas que devuelve.
+      responses:
+        204:
+          description: Confirma el borrado del alumno
+        404:
+          description: Informa de error - Alumno no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+                
+# Endpoint de asignatura
+  /asignatura:
+  
+    # Petición GET /asignatura
+    get: 
+      operationId: listaAsignaturas
+      summary: Devuelve una lista de asignaturas basada en filtro.
+   
+      # Parámetros de la petición
+      parameters:
+        # Parámetro 1
+        - name: identificador
+          in: query
+          description: ID de la asignatura
+          required: false
+          schema:
+            type: integer
+            format: int32
+        # Parámetro 2
+        - name: nombre
+          in: query
+          description: Nombre de la asignatura.
+          required: false
+          schema:
+            type: string
+        # Parámetro 3
+        - name: creditos
+          in: query
+          description: Valor de créditos ECTS de la asignatura.
+          required: false
+          schema:
+            type: integer
+            format: int32
+        # Parámetro 4
+        - name: horas
+          in: query
+          description: Horas semanales que tiene la asignatura
+          required: false
+          schema:
+            type: integer
+            format: int32
+            
+      responses:
+        200:
+          description: Devuelve una lista de asignaturas.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Asignatura" # Referencia a la definición del esquema asignatura.
+        404:
+          description: Informa de error - Asignatura no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición POST /asignatura
+    post:
+      operationId: creaAsignatura
+      summary: Recibe un json en el cuerpo y crea la asignatura correspondiente.
+      # Cuerpo de la petición
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Asignatura" # Referencia a la definición del esquema asignatura.
+      # Respuestas que devuelve.
+      responses:
+        201:
+          description: Confirma la creación de la nueva asignatura
+        401:
+          description: Error de parametros de entrada.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición PUT /asignatura
+    put:
+      operationId: actualizaAsignatura
+      summary: Recibe un json en el cuerpo y actualiza la asignatura correspondiente.
+      # Cuerpo de la petición
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Asignatura" # Referencia a la definición del esquema asignatura.
+      # Respuestas que devuelve.
+      responses:
+        200:
+          description: Confirma la actualización de la asignatura
+        404:
+          description: Informa de error - Asignatura no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                
+    # Petición DELETE /asignatura
+    delete:
+      operationId: borraAsignatura
+      summary: Recibe un json en el cuerpo y borra la asignatura correspondiente.
+      # Parámetros de la petición.
+      parameters:
+        - name: identificador
+          in: query
+          description: ID de la asignatura a borrar
+          required: true
+          schema:
+            type: string
+          
+      # Respuestas que devuelve.
+      responses:
+        204:
+          description: Confirma el borrado de la asignatura
+        404:
+          description: Informa de error - Asignatura no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                  
+                  
+  # Carga de ficheros.
+  /ficheroAsignatura:
+    get:
+      operationId: descargaFicheroAsignatura
+      summary: Descarga un fichero con los datos de las asignaturas.
+      responses:
+        200:
+          description: Confirma el exito de la peticion de descarga y entrega el fichero.
+          content:
+            text/plain: # Tipo MIME de fichero de texto.
+              schema:
+                type: string
+                format: byte   # Representa el archivo como flujo de bytes
+        403:
+          description: Operacion no autorizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        
+    # Peticion POST en /ficheroAsignatura        
+    post:
+      operationId: cargaFicheroAsignatura
+      summary: Carga un fichero con los datos de las asignaturas.
+      # Cuerpo de la peticion que describe el fichero
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: byte
+      responses:
+        200:
+          description: Confirma el exito de la peticion de carga del fichero.
+        403:
+          description: Operacion no autorizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+                  
+  # Carga de ficheros.
+  /ficheroAlumno:
+    get:
+      operationId: descargaFicheroAlumno
+      summary: Descarga un fichero con los datos de los alumnos.
+      responses:
+        200:
+          description: Confirma el exito de la peticion de descarga y entrega el fichero.
+          content:
+            text/plain: # Tipo MIME de fichero de texto.
+              schema:
+                type: string
+                format: byte   # Representa el archivo como flujo de bytes
+        403:
+          description: Operacion no autorizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        
+    # Peticion POST en /ficheroAsignatura        
+    post:
+      operationId: cargaFicheroAlumno
+      summary: Carga un fichero con los datos de los alumnos.
+      # Cuerpo de la peticion que describe el fichero
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: byte
+      responses:
+        200:
+          description: Confirma el exito de la peticion de carga del fichero.
+        403:
+          description: Operacion no autorizada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error" 
+        500:
+          description: Informa de error - Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"              
+                  
+                  
+# Definición de objetos
+components:
+  schemas:
+    Asignatura: # Objeto asignatura
+      type: object
+      properties:
+        identificador:
+          type: integer
+          format: int32
+        nombre:
+          type: string
+        creditos:
+          type: integer
+          format: int32
+        horasSemanales:
+          type: integer
+          format: int32
+          
+    Alumno: # Objeto alumno
+      type: object
+      properties:
+        dni:
+          type: string
+        nombre:
+          type: string
+        apellidos:
+          type: string
+        correo:
+          type: string
+        telefono:
+          type: string
+        asignatura:
+          $ref: "#/components/schemas/Asignatura"  # Referencia al esquema Asignatura
+          
+    Error:
+      type: object
+      properties:
+        codigo:
+          type: string
+        mensaje:
+          type: string
+        stack:
+          type: string     
+```
