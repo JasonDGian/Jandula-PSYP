@@ -64,8 +64,24 @@ paths:
 
 
 
-
-
+¿Como definir una respuesta con cuerpo?
+```yaml
+  /menu:
+    get:
+      description: "Endoint que devuelve el menu de platos del restaurante."
+      operationId: "getMenu"
+      produces:
+      - "application/json"
+          responses:
+        "200":
+          description: Devuelve el listado de objetos Plato que representa el menu.
+          content:
+            application/json:
+            type: "array"
+            items:
+              $ref: "#/definitions/Plato"
+```
+¿Como definir el tipo de contenido que la respuesta devuelve?
 
 
 
