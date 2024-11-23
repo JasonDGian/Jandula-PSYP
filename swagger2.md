@@ -1,3 +1,31 @@
+# 📌 Bloque de metadatos e info.
+```yaml
+# Bloque de metadatos.
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "API de Reservas de Patinetes"
+  description: >
+    Esta API permite gestionar usuarios, reservas y devoluciones de patinetes
+    eléctricos basados en la geolocalización.
+    
+# Datos server.
+host: "api.empresa.com"
+basePath: "/v1"
+schemes:
+  - http
+  - https
+  
+# Comunes a los endpoints.
+consumes:
+  - application/json
+produces:
+  - application/json
+  - application/xml
+  - application/pdf
+  - text/csv
+```
+
 # 📌 Estructura basica de endpoint.
 ```yaml
 paths:                  # Declaracion inicial de Paths (solo una vez por documento)
@@ -89,31 +117,31 @@ responses:
 **fichero CSV**
 ```yaml
 produces:
-        - "text/csv"  # Tipo MIME para archivos CSV
-      responses:
-        200:
-          description: "Archivo CSV descargado correctamente"
-          schema:
-            type: file  # Indicamos que la respuesta es un archivo
+  - "text/csv"  # Tipo MIME para archivos CSV
+responses:
+  200:
+    description: "Archivo CSV descargado correctamente"
+    schema:
+      type: file  # Indicamos que la respuesta es un archivo
 ```
 **fichero XML**
 ```yaml
 produces:
-        - "application/xml"  # Tipo MIME para archivos XML
-      responses:
-        200:
-          description: "Archivo XML descargado correctamente"
-          schema:
-            type: file  # Indicamos que la respuesta es un archivo
+  - "application/xml"  # Tipo MIME para archivos XML
+responses:
+  200:
+    description: "Archivo XML descargado correctamente"
+    schema:
+      type: file  # Indicamos que la respuesta es un archivo
 ```
 **fichero PDF**
 ```yaml
 produces:
-        - "application/pdf"  # Tipo MIME para archivos PDF
-      responses:
-        200:
-          description: "Archivo PDF descargado correctamente"
-          schema:
-            type: file  # Indicamos que la respuesta es un archivo
+  - "application/pdf"  # Tipo MIME para archivos PDF
+responses:
+  200:
+    description: "Archivo PDF descargado correctamente"
+    schema:
+      type: file  # Indicamos que la respuesta es un archivo
 ```
 
