@@ -1,87 +1,65 @@
-## Bloque de metadatos.
+# 📌 Parametros
+## 📍 Parametros en Query
 ```yaml
-swagger: "2.0"
-info:
-  description: "descripcion larga"
-  version: "1.0.0"
-  title: "titulo api"
-  termsOfService: "link a terminos"
-  contact:
-    email: "correo"
-host: "dominio de la api o empresa"
-basePath: "base como /v2"
-schemes:
-- "https"
-- "http"
+ parameters:
+  - name: "nombreParam"
+    in: "query"
+    description: "Desc Param"
+    required: true
+    type: "string"
+```
+   
+## 📍 Parametros en Header
+```yaml
+ parameters:
+  - name: "nombreParam"
+    in: "header"
+    description: "Desc Param"
+    required: true
+    type: "string"
+```
+    
+## 📍 Parametros en Body
+```yaml
+parameters:
+  - in: "body"
+    name: "user"
+    description: "Objeto con la información del usuario"
+    required: true
+    schema:
+      "$ref": "#/definitions/User"
 ```
 
-## Peticiones
-**
+## 📍 Parametros en fichero
+Debe especificar el 'consume'.
 ```yaml
 paths:
-  /ruta-ataque:
+  /upload:
     post:
-      description: "descripcion"
-      operationId: "firma metodo"
+      summary: Uploads a file.
       consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/json"
-      - "application/xml"
+        - multipart/form-data
       parameters:
-      - in: "body"
-
-
-
-    
+        - in: formData
+          name: upfile
+          type: file
+          description: The file to upload.
 ```
 
 
-** Bloque parametros - Cuerpo**
+   
+# 📌 Respuestas
+## 📍 Respuesta
 ```yaml
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Pet object that needs to be added to the store"
-        required: true
-        schema:
-          $ref: "#/definitions/Pet"
+
 ```
-** Bloque parametros - Cuerpo**
+   
+## 📍 Respuesta
 ```yaml
-      parameters:
-      - name: "nombreparam"
-        in: "query"
-        name: "nombreparam"
-        description: "descripcion parametro"
-        required: true
-        schema:
-          $ref: "#/definitions/Pet"
+
 ```
-## Bloque de definicion
-
-
-
-
-¿Como definir una respuesta con cuerpo?
+   
+## 📍 Respuesta
 ```yaml
-  /menu:
-    get:
-      description: "Endoint que devuelve el menu de platos del restaurante."
-      operationId: "getMenu"
-      produces:
-      - "application/json"
-          responses:
-        "200":
-          description: Devuelve el listado de objetos Plato que representa el menu.
-          content:
-            application/json:
-            type: "array"
-            items:
-              $ref: "#/definitions/Plato"
+
 ```
-¿Como definir el tipo de contenido que la respuesta devuelve?
-
-
-
