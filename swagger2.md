@@ -102,6 +102,19 @@ parameters:
 
    
 # 📌 Respuestas
+## 📍 Respuesta simple.
+```yaml
+responses:
+  200:
+    description: Reserva realizada con exito.
+    schema:
+      type: object
+      properties:
+        saldoActualizado:
+          type: number
+          format: float
+```
+
 ## 📍 Respuesta con objeto Json.
 ```yaml
 produces:
