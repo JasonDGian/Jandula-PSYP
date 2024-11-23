@@ -40,6 +40,19 @@ paths:                  # Declaracion inicial de Paths (solo una vez por documen
 ```
 
 # 📌 Parametros
+
+## 📍 Parametros en Path
+```yaml
+/usuario/{id}:
+    get:
+      description: "Este endpoint devuelve la información de un usuario basado en su ID."
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "ID del usuario"
+          required: true
+          type: "integer"
+```
 ## 📍 Parametros en Query
 ```yaml
  parameters:
@@ -185,4 +198,25 @@ definitions:
         required:
           - jobTitle
           - salary
+```
+
+## 📍 Definicion de objeto Excepcion personalizado.
+```yaml
+definitions:
+  Error:
+    type: object
+    properties:
+      codigo:
+        type: integer
+        format: int32
+        description: "Codigo del error."
+      mensaje:
+        type: string
+        description: "Mensaje de la excepcion."
+      traza:
+        type: string
+        description: "Traza del error si la hubiere."
+    required:
+      - codigo
+      - mensaje
 ```
