@@ -40,7 +40,7 @@ consumes:
   - multipart/form-data
 parameters:
   - in: formData
-    name: upfile
+    name: nombreParam
     type: file
     description: The file to upload.
 ```
@@ -48,17 +48,59 @@ parameters:
 
    
 # 📌 Respuestas
-## 📍 Respuesta
+## 📍 Respuesta con objeto Json.
 ```yaml
-
+produces:
+  - "application/json"  # Especificamos que la respuesta es JSON
+responses:
+  200:
+    description: "Usuario encontrado correctamente"
+    schema:
+      $ref: "#/definitions/User" 
 ```
    
-## 📍 Respuesta
+## 📍 Respuesta lista de objetos Json.
 ```yaml
-
+produces:
+  - "application/json"  # Especificamos que la respuesta es JSON
+responses:
+  200:
+    description: "Lista de usuarios"
+    schema:
+      type: array # Responde con un array de Json en lugar de unico objeto.
+      items:
+        $ref: "#/definitions/User" 
 ```
    
-## 📍 Respuesta
+## 📍 Respuesta con fichero para descarga.
+**fichero CSV**
 ```yaml
-
+produces:
+        - "text/csv"  # Tipo MIME para archivos CSV
+      responses:
+        200:
+          description: "Archivo CSV descargado correctamente"
+          schema:
+            type: file  # Indicamos que la respuesta es un archivo
 ```
+**fichero XML**
+```yaml
+produces:
+        - "application/xml"  # Tipo MIME para archivos XML
+      responses:
+        200:
+          description: "Archivo XML descargado correctamente"
+          schema:
+            type: file  # Indicamos que la respuesta es un archivo
+```
+**fichero PDF**
+```yaml
+produces:
+        - "application/pdf"  # Tipo MIME para archivos PDF
+      responses:
+        200:
+          description: "Archivo PDF descargado correctamente"
+          schema:
+            type: file  # Indicamos que la respuesta es un archivo
+```
+
