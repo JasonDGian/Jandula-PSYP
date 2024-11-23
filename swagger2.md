@@ -1,3 +1,16 @@
+# 📌 Estructura basica de endpoint.
+```yaml
+paths:                  # Declaracion inicial de Paths (solo una vez por documento)
+  /url:                 # Url de punto de ataque del endpoint.
+    verbo:              # Verbo con el que se ataca al endpoint [ post, put, get, delete ]
+      description:      # Breve descripcion del comportamiento del endpoint.
+      operationId:      # Identifica el metodo backend que se encarga de atender a esta petición.
+      consumes:         # Solo presente cuando el endpoint consume datos. [ application/json, application/xml, application/pdf ]
+      produces:         # Solo presente cuando el endpoint produce datos.
+      parameters:       # Parametros que el endpoint espera.
+      responses:        # Respuesta que el endpoint devuelve.
+```
+
 # 📌 Parametros
 ## 📍 Parametros en Query
 ```yaml
