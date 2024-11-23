@@ -145,3 +145,44 @@ responses:
       type: file  # Indicamos que la respuesta es un archivo
 ```
 
+# 📌 Definiciones.
+## 📍 Definicion simple.
+```yaml
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: "El ID del usuario"
+      name:
+        type: string
+        description: "El nombre del usuario"
+      email:
+        type: string
+        description: "El correo electrónico del usuario"
+    required:
+      - id
+      - name
+      - email
+```
+   
+## 📍 Definicion con herencia.
+```yaml
+  Employee:
+    allOf:
+      - $ref: '#/definitions/User'  # Hereda de la definición User
+      - type: object
+        properties:
+          jobTitle:
+            type: string
+            description: "El título del trabajo del empleado"
+          salary:
+            type: number
+            format: float
+            description: "El salario del empleado"
+        required:
+          - jobTitle
+          - salary
+```
