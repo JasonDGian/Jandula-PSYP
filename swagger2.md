@@ -36,17 +36,13 @@ parameters:
 ## 📍 Parametros en fichero
 Debe especificar el 'consume'.
 ```yaml
-paths:
-  /upload:
-    post:
-      summary: Uploads a file.
-      consumes:
-        - multipart/form-data
-      parameters:
-        - in: formData
-          name: upfile
-          type: file
-          description: The file to upload.
+consumes:
+  - multipart/form-data
+parameters:
+  - in: formData
+    name: upfile
+    type: file
+    description: The file to upload.
 ```
 
 
