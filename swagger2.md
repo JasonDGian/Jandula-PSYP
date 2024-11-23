@@ -20,7 +20,10 @@
 ```
     
 ## 📍 Parametros en Body
+Debe especificar que consume un `application/json`.
 ```yaml
+consumes:
+  - "application/json"
 parameters:
   - in: "body"
     name: "user"
