@@ -170,7 +170,18 @@ responses:
     schema:
       type: file  # Indicamos que la respuesta es un archivo
 ```
-
+**fichero PNG**
+```yaml
+produces:
+  - image/png
+responses:
+  200:
+    description: Imagen png
+    schema:
+      type: string
+      format: binary
+```
+    
 # 📌 Definiciones.
 ## 📍 Definicion simple.
 ```yaml
@@ -233,3 +244,29 @@ definitions:
       - codigo
       - mensaje
 ```
+
+############################ CODIGOS HTTP
+```yaml
+200:
+  description: OK
+201:
+  description: CREATED
+204:
+  description: NO CONTENT (ejemplo: borrado con exito)
+
+400:
+  description: BAD REQUEST
+401:
+  description: UNAUTHORIZED -> Para recursos protegidos por permisos de autenticacion y no se ha efectuado login aun.
+403:
+  description: FORBIDDEN -> Para cuando el login se ha efectuado pero no tiene acceso.
+404:
+  description: NOT FOUND
+500:
+  description: INTERNAL SERVER ERROR
+501:
+  description: NOT IMPLEMENTED -> El metodo no ha sido reconocido por el servidor o no puede atenderlo.
+
+```
+
+
