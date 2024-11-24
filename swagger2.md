@@ -245,7 +245,6 @@ definitions:
       - mensaje
 ```
 
-############################ CODIGOS HTTP
 ```yaml
 200:
   description: OK
@@ -266,7 +265,6 @@ definitions:
   description: INTERNAL SERVER ERROR
 501:
   description: NOT IMPLEMENTED -> El metodo no ha sido reconocido por el servidor o no puede atenderlo.
-
 ```
 
 
