@@ -1,22 +1,25 @@
 # 📌 Bloque de metadatos e info.
 ```yaml
-# Bloque de metadatos.
+# Version de especificacion OpenAPI.
 swagger: "2.0"
+# Información general del servicio.
 info:
-  version: "1.0.0"
-  title: "API de Reservas de Patinetes"
-  description: >
-    Esta API permite gestionar usuarios, reservas y devoluciones de patinetes
-    eléctricos basados en la geolocalización.
-    
-# Datos server.
+  version: 1.0.0
+  title: "titulo"
+  description: "descripcion"
+  contact:
+    name:  "nombre"
+    email: "correo"
+    url: https://www.pagina.com
+
+# Datos server & host.
 host: "api.empresa.com"
 basePath: "/v1"
 schemes:
   - http
   - https
   
-# Comunes a los endpoints.
+# Seccion de comunes a los endpoints.
 consumes:
   - application/json
 produces:
