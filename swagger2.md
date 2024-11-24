@@ -219,14 +219,14 @@ definitions:
   Error:
     type: object
     properties:
-      codigo:
+      errorCode:
         type: integer
         format: int32
         description: "Codigo del error."
-      mensaje:
+      errorMessage:
         type: string
         description: "Mensaje de la excepcion."
-      traza:
+      stackTrace:
         type: string
         description: "Traza del error si la hubiere."
     required:
