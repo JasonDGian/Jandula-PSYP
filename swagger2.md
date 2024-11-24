@@ -111,11 +111,8 @@ responses:
   200:
     description: Reserva realizada con exito.
     schema:
-      type: object
-      properties:
-        saldoActualizado:
-          type: number
-          format: float
+      type: number
+      format: float
 ```
 
 ## 📍 Respuesta con objeto Json.
