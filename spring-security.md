@@ -15,12 +15,26 @@ La "Filter Chain" (cadena de filtros) en Spring Boot es un mecanismo general que
    
 ![imagen](https://github.com/user-attachments/assets/5e10afbd-1777-40f0-adc1-c50d73914758)
 
-## 🔸 Authentication Filter
+## 🔸 Authentication Filter,
 El `Authentication Filter` es el filtro que introduce el modulo de Spring Security al estar activo en el servidor. Este filtro **se dedicará a interceptar las peticiones HTTP relacionadas a la autenticación.** De estas peticiones extraerá los credenciales de autenticación, recogerá estos valores y creará un **objeto de autenticación** a partir de ellos.
 
 ![imagen](https://github.com/user-attachments/assets/506a1ffa-866c-4110-bde7-5bed43ec879e)
 
+## 🔸 Authentication Manager.
+El `Authentication Manager` recibe el `Authentication Object` y se encarga de referir el objeto de autenticación al `proveedor de autenticación` configurado en la aplicación.
+- Es como si el manager decide quien debe de realizar la operación basandose en los ficheros de configuración.
+   
+![imagen](https://github.com/user-attachments/assets/6787f41b-ed58-456c-b16b-1ddf30b21b2d)
 
+   
+## 🔸 Authentication Provider.
+El `Authentication Provider` es el componente **responsable de comprobar si los credenciales de autenticación son correctos o no**. Para que un proveedor de autenticación pueda hacer su trabajo necesita dos elementos.
+1. `PasswordEncoder` - Codificador de contraseñas.
+2. `UserDetailService` - Servicio de detalles de usuario.
+
+## 🔸 PasswordEncoder.
+El `Password Encoder` es una herramienta de apoyo para el `Authentication Provider` que permite codificar la contraseña recibida en texto plano para poder compararla con la contraseña almacenada en BBDD. Esto se hace porque las contraseñas se almacenan
+en BBDD cifradas, nunca en texto plano, ya que esto supondría un enorme fallo de seguridad.
 
 ## 🔸 Session ID
 El **Session ID** es un identificador único generado por el servidor para asociar una sesión del cliente con un conjunto de datos almacenados en el servidor. Este identificador es crucial en aplicaciones web donde se requiere mantener el estado entre el cliente y el servidor.    
