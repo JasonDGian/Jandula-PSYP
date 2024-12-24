@@ -17,30 +17,38 @@ La "Filter Chain" (cadena de filtros) en Spring Boot es un mecanismo general que
 
 ## 🔸 Authentication Filter,
 El `Authentication Filter` es el filtro que introduce el modulo de Spring Security al estar activo en el servidor. Este filtro **se dedicará a interceptar las peticiones HTTP relacionadas a la autenticación.** De estas peticiones extraerá los credenciales de autenticación, recogerá estos valores y creará un **objeto de autenticación** a partir de ellos.
-
+    
 ![imagen](https://github.com/user-attachments/assets/506a1ffa-866c-4110-bde7-5bed43ec879e)
-
+    
+>[!IMPORTANT]
+>**El objeto de autenticación que se genera mediante el Authentication Filter es potencialmente incompleto.** Este objeto solo llevará los datos necesarios para el intento de inicio de sesión. En caso de que el objeto completo contenga otros detalles como roles, tipos de usuario, etc no estarán presentes en el momento de su creación.
+     
 ## 🔸 Authentication Manager.
 El `Authentication Manager` recibe el `Authentication Object` y se encarga de referir el objeto de autenticación al `proveedor de autenticación` configurado en la aplicación.
 - Es como si el manager decide quien debe de realizar la operación basandose en los ficheros de configuración.
-   
+     
 ![imagen](https://github.com/user-attachments/assets/6787f41b-ed58-456c-b16b-1ddf30b21b2d)
-
-   
+    
 ## 🔸 Authentication Provider.
 El `Authentication Provider` es el componente **responsable de comprobar si los credenciales de autenticación son correctos o no**. Para que un proveedor de autenticación pueda hacer su trabajo necesita dos elementos.
-1. `PasswordEncoder` - Codificador de contraseñas.
+1. `PasswordEncoder` - Codificador de contraseñas para comparar con claves almacenadas en BBDD.
 2. `UserDetailService` - Servicio de detalles de usuario.
 
+![imagen](https://github.com/user-attachments/assets/d3e08bc1-f127-439f-bb9f-aef5a877c812)
+
+    
 ## 🔸 PasswordEncoder.
 El `Password Encoder` es una herramienta de apoyo para el `Authentication Provider` que permite codificar la contraseña recibida en texto plano para poder compararla con la contraseña almacenada en BBDD. Esto se hace porque las contraseñas se almacenan
 en BBDD cifradas, nunca en texto plano, ya que esto supondría un enorme fallo de seguridad.
-
+   
+## 🔸 UserDetailService.
+Este componente es invocado por el AuthenticationProvider para completar el objeto de autenticación. Recoge de un origen de datos todos las propiedades que conforman el objeto del usuario que se autentica. Este objeto recupera todos los datos del usuario y lo convierte en un `UserDetailObject` para asi retornarlo. 
+    
 ## 🔸 Session ID
 El **Session ID** es un identificador único generado por el servidor para asociar una sesión del cliente con un conjunto de datos almacenados en el servidor. Este identificador es crucial en aplicaciones web donde se requiere mantener el estado entre el cliente y el servidor.    
 #### ¿Para que sirve?
 El Session ID en Spring Security sirve para identificar de manera única la sesión de un usuario en el servidor, permitiendo mantener su estado (como autenticación y datos asociados) entre múltiples solicitudes durante su interacción con la aplicación.
-   
+      
 **Lo más importante sobre el Session ID en Spring Security:**
 - Identificador único: Asocia una sesión del cliente con datos en el servidor.
 - Autenticación: Permite mantener el estado de autenticación entre solicitudes.
