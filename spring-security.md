@@ -33,16 +33,22 @@ El `Authentication Manager` recibe el `Authentication Object` y se encarga de re
 El `Authentication Provider` es el componente **responsable de comprobar si los credenciales de autenticación son correctos o no**. Para que un proveedor de autenticación pueda hacer su trabajo necesita dos elementos.
 1. `PasswordEncoder` - Codificador de contraseñas para comparar con claves almacenadas en BBDD.
 2. `UserDetailService` - Servicio de detalles de usuario.
-
+    
 ![imagen](https://github.com/user-attachments/assets/d3e08bc1-f127-439f-bb9f-aef5a877c812)
 
     
 ## 🔸 PasswordEncoder.
-El `Password Encoder` es una herramienta de apoyo para el `Authentication Provider` que permite codificar la contraseña recibida en texto plano para poder compararla con la contraseña almacenada en BBDD. Esto se hace porque las contraseñas se almacenan
-en BBDD cifradas, nunca en texto plano, ya que esto supondría un enorme fallo de seguridad.
-   
+El `Password Encoder` es una herramienta de apoyo para el `Authentication Provider` que permite codificar la contraseña recibida en texto plano para poder compararla con la contraseña almacenada en BBDD. Esto se hace porque las contraseñas se almacenan cifradas
+en BBDD, nunca en texto plano, ya que esto supondría un enorme fallo de seguridad.
+    
+![imagen](https://github.com/user-attachments/assets/29983778-ddbd-413c-8746-80b3a99188a5)
+
 ## 🔸 UserDetailService.
 Este componente es invocado por el AuthenticationProvider para completar el objeto de autenticación. Recoge de un origen de datos todos las propiedades que conforman el objeto del usuario que se autentica. Este objeto recupera todos los datos del usuario y lo convierte en un `UserDetailObject` para asi retornarlo. 
+    
+![imagen](https://github.com/user-attachments/assets/55e46bde-0ce3-46dc-8467-6269a3187e4c)
+
+
     
 ## 🔸 Session ID
 El **Session ID** es un identificador único generado por el servidor para asociar una sesión del cliente con un conjunto de datos almacenados en el servidor. Este identificador es crucial en aplicaciones web donde se requiere mantener el estado entre el cliente y el servidor.    
