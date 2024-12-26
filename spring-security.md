@@ -53,6 +53,21 @@ Este componente es invocado por el AuthenticationProvider para completar el obje
 # 📌 Cabecera `Authorization`. 
 Cuando enviamos credenciales desde una aplicación cliente a una aplicación **Spring Boot** con **Security**, estas se incluyen en la cabecera `Authorization: Basic <usuario:contraseña codificados en Base64>`. Esta cabecera se usa para autenticar y verificar el nivel de autorización del usuario.
 
+**Ejemplo cabecera:**
+```
+POST /api/resource HTTP/1.1
+Host: example.com
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+Content-Type: application/json
+
+{
+  "param1": "value1",
+  "param2": "value2"
+}
+```
+
+>[!CAUTION]
+> La codificación en Base64 no es una medida de seguridad por sí sola, ya que simplemente convierte los datos en una cadena que puede ser fácilmente decodificada. Base64 es más una forma de transferencia de datos que una protección efectiva contra accesos no autorizados.
 
 # 📌 Cambiar credenciales para entornos de desarrollo.
 Es posible especificar credenciales mediante la configuración del fichero `application.yaml`.
