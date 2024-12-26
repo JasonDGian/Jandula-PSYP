@@ -21,3 +21,16 @@ El directorio templates se utiliza para almacenar las plantillas Thymeleaf, que 
 - **Vistas dinámicas:** HTML que puede incluir fragmentos reutilizables y componentes que son evaluados en el servidor.
 
 **Ejemplo de uso:** Si tienes un archivo `index.html` en `src/main/resources/templates`, y tu controlador Spring Boot lo referencia mediante `return "index"`, Thymeleaf procesará la plantilla `index.html` y generará la página HTML final que se enviará al navegador del usuario.
+
+
+# 📌 Enlazando plantillas.
+Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.
+**Ejemplo de llamada a otra plantilla**
+```html
+<ul>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/login">Login</a></li>
+</ul>
+```
+>[!NOTE]
+>Nota como en lugar de enlazar a `/home.html` enlazamos directamente a `/home`. 
