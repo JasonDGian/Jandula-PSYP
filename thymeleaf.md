@@ -33,4 +33,4 @@ Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de
 </ul>
 ```
 >[!NOTE]
->Nota como en lugar de enlazar a `/home.html` enlazamos directamente a `/home`. 
+>Nota como en lugar de enlazar a `/home.html` enlazamos directamente a `/home` y como es el servidor el encargador de servir la página tras la llamada. 
