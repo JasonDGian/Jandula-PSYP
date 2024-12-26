@@ -46,9 +46,22 @@ en BBDD, nunca en texto plano, ya que esto supondría un enorme fallo de segurid
 ## 🔸 UserDetailService.
 Este componente es invocado por el AuthenticationProvider para completar el objeto de autenticación. Recoge de un origen de datos todos las propiedades que conforman el objeto del usuario que se autentica. Este objeto recupera todos los datos del usuario y lo convierte en un `UserDetailObject` para asi retornarlo. 
     
-![imagen](https://github.com/user-attachments/assets/55e46bde-0ce3-46dc-8467-6269a3187e4c)
+![imagen](https://github.com/user-attachments/assets/3f4302a6-a5d3-4f93-9be3-cc82b1e6f291)
 
+## 🔸 Esquemma de operaciones completo.
 
+# 📌 Cambiar credenciales para entornos de desarrollo.
+Es posible especificar credenciales mediante la configuración del fichero `application.yaml`.
+Para ello bastará con introducir las siguientes lineas:   
+```yaml
+spring:
+  security:
+    user:
+      name: usuario
+      password: password
+```
+>[!CAUTION]
+>Esta practica no es apta para entornos de producción, es estrictamente para entornos de desarrollo.
     
 ## 🔸 Session ID
 El **Session ID** es un identificador único generado por el servidor para asociar una sesión del cliente con un conjunto de datos almacenados en el servidor. Este identificador es crucial en aplicaciones web donde se requiere mantener el estado entre el cliente y el servidor.    
