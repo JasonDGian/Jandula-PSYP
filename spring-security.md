@@ -50,6 +50,10 @@ Este componente es invocado por el AuthenticationProvider para completar el obje
 
 ## 🔸 Esquemma de operaciones completo.
 
+# 📌 Cabecera `Authorization`. 
+Cuando enviamos credenciales desde una aplicación cliente a una aplicación **Spring Boot** con **Security**, estas se incluyen en la cabecera `Authorization: Basic <usuario:contraseña codificados en Base64>`. Esta cabecera se usa para autenticar y verificar el nivel de autorización del usuario.
+
+
 # 📌 Cambiar credenciales para entornos de desarrollo.
 Es posible especificar credenciales mediante la configuración del fichero `application.yaml`.
 Para ello bastará con introducir las siguientes lineas:   
