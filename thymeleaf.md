@@ -1,3 +1,9 @@
+# 📌 Modelo Vista Controlador.
+En el patrón MVC, el Controlador recibe las solicitudes del usuario, procesa la lógica necesaria, manipula el Modelo y envía el Modelo a la Vista. La Vista entonces utiliza los datos del Modelo para generar la representación final que se devuelve al cliente.
+   
+![imagen](https://github.com/user-attachments/assets/34925c2d-f520-431c-b3ae-37f27ff6f6f4)
+
+
 # 📌 Directorios de Thymeleaf.
 En Thymeleaf vamos a trabajar con dos directorios principalmente. `Static` y `Templates`.
 
@@ -10,10 +16,7 @@ El directorio static se utiliza para almacenar archivos estáticos que la aplica
 - **Fuentes y otros recursos estáticos:** Cualquier otro recurso que deba ser accesible directamente sin necesidad de procesamiento.
 
 **Ejemplo de uso:**  
-Si colocas un archivo CSS llamado styles.css en src/main/resources/static/css, se podrá acceder a él directamente en el navegador con la URL http://localhost:8080/css/styles.css.
-
-Para que Thymeleaf pueda servir las vistas y plantillas HTML, debemos crear el directorio en el que Spring Boot buscará los estos recursos.
-El directorio en cuestion es `proyecto/src/main/resources/static` y este contendrá las plantillas HTML que deseamos servir.
+Si colocas un archivo CSS llamado `styles.css` en `src/main/resources/static/css`, se podrá acceder a él directamente en el navegador con la URL http://localhost:8080/css/styles.css.
 
 ## 🔸 Directorio Templates.
 El directorio templates se utiliza para almacenar las plantillas Thymeleaf, que son archivos HTML que serán procesados por el servidor antes de ser enviados al cliente. Estas plantillas pueden contener código Thymeleaf que será evaluado y reemplazado por datos dinámicos en el lado del servidor.
@@ -24,8 +27,8 @@ El directorio templates se utiliza para almacenar las plantillas Thymeleaf, que 
 
 
 # 📌 Enlazando plantillas.
-Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.
-**Ejemplo de llamada a otra plantilla**
+Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.    
+**Ejemplo de llamada a otra plantilla**    
 ```html
 <ul>
     <li><a href="/home">Home</a></li>
@@ -34,3 +37,25 @@ Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de
 ```
 >[!NOTE]
 >Nota como en lugar de enlazar a `/home.html` enlazamos directamente a `/home` y como es el servidor el encargador de servir la página tras la llamada. 
+
+# 📌 Clase Model.
+Así que, en resumen, el modelo en el patrón MVC juega un papel crucial al encapsular y manejar los datos y la lógica de negocio, permitiendo que esos datos sean utilizados por la vista para su presentación al usuario.
+
+**Controllador** 
+   
+![imagen](https://github.com/user-attachments/assets/98944692-448b-4185-8d2a-651c347976a7)
+   
+**Vista** 
+   
+![imagen](https://github.com/user-attachments/assets/9fbe0fdf-2b85-4fb5-ba03-5fb262b6cf19)
+
+
+
+
+
+
+
+
+
+
+
