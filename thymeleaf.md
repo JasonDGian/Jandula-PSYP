@@ -78,3 +78,16 @@ Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente 
 > El mecanismo funciona mediante una 'sostitución de contenidos' que realiza Thymeleaf. Por eso debemos crear un div e indicarle que será remplazado por el fragmento que invocamos.
 
 ## 📍 Introducir varios fragmentos mediante bucles.
+
+
+---------- EN SUCIO.
+
+1º - Creamos el metodo fuente de informacion.
+![imagen](https://github.com/user-attachments/assets/5ac8a974-340b-4d09-a820-eeaef0f47d45)
+
+![imagen](https://github.com/user-attachments/assets/35ae8bd0-f416-45a3-a1a2-ff0df8e35001)
+
+
+2º - Recuperamos los valores del modelo recibido en la vista o plantilla.
+![imagen](https://github.com/user-attachments/assets/c5398957-9c9d-4511-b2bc-7573746a1f47)
+
