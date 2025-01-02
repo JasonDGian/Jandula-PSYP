@@ -57,7 +57,8 @@ Así que, en resumen, el modelo en el patrón MVC juega un papel crucial al enca
 Es posible introducir un fragmento en todas las paginas que lo necesiten, para ello usamos la siguiente sintaxis.
 
 ### 🔸 Definición el fragmento.
-Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.html` y asignar un identificador al elemento a reutilizar. Para ello usamos el atributo `th:fragment="nombre-fragmento"`.
+Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.html` y asignar un identificador al elemento a reutilizar. Para ello usamos el atributo `th:fragment="nombre-fragmento"`.     
+    
 **Ejemplo fragmento:**
 ```html
 <div th:fragments="navbar">
@@ -65,8 +66,8 @@ Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.h
 </div>
 ```
 ### 🔸 Inyección del fragmento.
-Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente sintaxis.
-
+Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente sintaxis.    
+    
 **Ejemplo fragmento:**
 ```html
 <!-- Navbar incluida mediante mecanismos de thymeleaf.-->
