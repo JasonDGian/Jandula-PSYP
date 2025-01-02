@@ -51,7 +51,17 @@ Así que, en resumen, el modelo en el patrón MVC juega un papel crucial al enca
 
 
 
+# 📌 Manejo de elementos en plantillas.
 
+## 📍 Introducir un fragmento html en otras paginas.
+Es posible introducir un fragmento en todas las paginas que lo necesiten, para ello usamos la siguiente sintaxis.
+
+**Definición el fragmento:**
+```html
+<div th:fragments="navbar">
+ <!-- CONTENIDO DEL FRAGMENTO -->
+</div>
+```
 
 
 
