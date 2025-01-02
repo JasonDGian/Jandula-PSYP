@@ -74,7 +74,7 @@ Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente 
 <div th:replace="fragments/navbar"></div>
 ```
 
+>[!Note]
+> El mecanismo funciona mediante una 'sostitución de contenidos' que realiza Thymeleaf. Por eso debemos crear un div e indicarle que será remplazado por el fragmento que invocamos.
 
-
-
-
+## 📍 Introducir varios fragmentos mediante bucles.
