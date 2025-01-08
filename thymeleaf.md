@@ -15,7 +15,7 @@ El directorio static se utiliza para almacenar archivos estáticos que la aplica
 - **Imágenes**: Archivos gráficos, como logotipos, fotos, etc.
 - **Fuentes y otros recursos estáticos:** Cualquier otro recurso que deba ser accesible directamente sin necesidad de procesamiento.
 
-**Ejemplo de uso:**  
+#### 🧮 Ejemplo de uso. 
 Si colocas un archivo CSS llamado `styles.css` en `src/main/resources/static/css`, se podrá acceder a él directamente en el navegador con la URL http://localhost:8080/css/styles.css.
 
 ## 🔸 Directorio Templates.
@@ -23,7 +23,8 @@ El directorio templates se utiliza para almacenar las plantillas Thymeleaf, que 
 - **Plantillas Thymeleaf:** Archivos HTML que incluyen directivas Thymeleaf para renderizar datos dinámicos desde el servidor.
 - **Vistas dinámicas:** HTML que puede incluir fragmentos reutilizables y componentes que son evaluados en el servidor.
 
-**Ejemplo de uso:** Si tienes un archivo `index.html` en `src/main/resources/templates`, y tu controlador Spring Boot lo referencia mediante `return "index"`, Thymeleaf procesará la plantilla `index.html` y generará la página HTML final que se enviará al navegador del usuario.
+#### 🧮 Ejemplo de uso.
+Si tienes un archivo `index.html` en `src/main/resources/templates`, y tu controlador Spring Boot lo referencia mediante `return "index"`, Thymeleaf procesará la plantilla `index.html` y generará la página HTML final que se enviará al navegador del usuario.
 
 
 # 📌 Enlazando plantillas.
@@ -59,7 +60,7 @@ Es posible introducir un fragmento en todas las paginas que lo necesiten, para e
 ### 🔸 Definición el fragmento.
 Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.html` y asignar un identificador al elemento a reutilizar. Para ello usamos el atributo `th:fragment="nombre-fragmento"`.     
     
-**Ejemplo fragmento:**
+#### 🧮 Ejemplo fragmento.
 ```html
 <div th:fragments="navbar">
  <!-- CONTENIDO DEL FRAGMENTO -->
@@ -68,7 +69,7 @@ Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.h
 ### 🔸 Inyección del fragmento.
 Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente sintaxis.    
     
-**Ejemplo fragmento:**
+#### 🧮 Ejemplo fragmento.
 ```html
 <!-- Navbar incluida mediante mecanismos de thymeleaf.-->
 <div th:replace="fragments/navbar"></div>
