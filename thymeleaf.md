@@ -32,8 +32,8 @@ Para enlazar plantillas de Thymeleaf unas con otras haremos uso del **`th:href="
 **Ejemplo de llamada a otra plantilla**    
 ```html
 <ul>
-    <li><a href="home">Home</a></li>
-    <li><a href="login">Login</a></li>
+    <li><a th:href="home">Home</a></li>
+    <li><a th:href="login">Login</a></li>
 </ul>
 ```
 >[!NOTE]
