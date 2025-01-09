@@ -28,7 +28,7 @@ Si tienes un archivo `index.html` en `src/main/resources/templates`, y tu contro
 
 
 # 📌 Enlazando plantillas.
-Para enlazar plantillas de Thymeleaf unas con otras haremos uso del **`th:href=""`** parecido al **`href`** de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.    
+Para enlazar plantillas de Thymeleaf unas con otras haremos uso del **`th:href=""`** parecido al **`href`** de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada de un recurso o endpoint del controlador.    
 **Ejemplo de llamada a otra plantilla**    
 ```html
 <ul>
@@ -40,14 +40,19 @@ Para enlazar plantillas de Thymeleaf unas con otras haremos uso del **`th:href="
 >Nota como en lugar de enlazar a `/home.html` enlazamos directamente a `/home` y como es el servidor el encargador de servir la página tras la llamada. 
 
 # 📌 Clase Model.
-Así que, en resumen, el modelo en el patrón MVC juega un papel crucial al encapsular y manejar los datos y la lógica de negocio, permitiendo que esos datos sean utilizados por la vista para su presentación al usuario.
+El **modelo** en el patrón MVC juega un papel crucial al **encapsular y manejar los datos** y la lógica de negocio, permitiendo que esos datos sean utilizados por la vista para su presentación al usuario.
+En otras palabras el modelo puede ser definido como un contenedor que el controlador carga y pasa a la vista para que esta pueda procesar y consumir datos.
 
-**Controllador** 
+![image](https://github.com/user-attachments/assets/05b1f176-e3d8-4434-bd90-e16f1b040d0c)
+
+
    
+**Controllador** 
+El controlador es el encargado de cargar el modelo con la información y datos que serán transferidos a la vista.    
 ![imagen](https://github.com/user-attachments/assets/98944692-448b-4185-8d2a-651c347976a7)
    
 **Vista** 
-   
+La vista recibirá el modelo y consumirá los datos que contiene.   
 ![imagen](https://github.com/user-attachments/assets/9fbe0fdf-2b85-4fb5-ba03-5fb262b6cf19)
 
 
@@ -69,10 +74,16 @@ Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.h
 ### 🔸 Inyección del fragmento.
 Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente sintaxis.    
     
-#### 🧮 Ejemplo fragmento.
+#### 🧮 Ejemplo de inyección de fragmento.
 ```html
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1> Bienvenido </h1>
 <!-- Navbar incluida mediante mecanismos de thymeleaf.-->
-<div th:replace="fragments/navbar"></div>
+<div th:replace="~{fragments/navbar}"></div>
+</body>
+</html>
+
 ```
 
 >[!Note]
