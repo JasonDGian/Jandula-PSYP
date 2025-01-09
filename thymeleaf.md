@@ -84,8 +84,12 @@ La principal diferencia entre **insert** y **replace** es su comportamiento con 
 <div th:replace="~{fragments/navbar}"></div>
 </body>
 </html>
-
 ```
+
+   
+![image](https://github.com/user-attachments/assets/9a3ed651-3560-4610-938b-721c488f172b)
+
+    
 
 >[!Note]
 > El mecanismo funciona mediante una 'sostitución de contenidos' que realiza Thymeleaf. Por eso debemos crear un div e indicarle que será remplazado por el fragmento que invocamos.
