@@ -72,7 +72,8 @@ Para definir un fragmento en Thymeleaf, es necesario crear una **plantilla** `.h
 </div>
 ```
 ### 🔸 Inyección del fragmento.
-Para inyectar o introducir un fragmento en otra plantilla usaremos la siguiente sintaxis.    
+Para inyectar o introducir un fragmento en otra plantilla podemos usar la instrucción *`th:replace`*  o *`th:insert`*.    
+La principal diferencia entre **insert** y **replace** es su comportamiento con la etiqueta padre. Una introduce el contenido del fragmento en ella y la otra la remplaza por completo.
     
 #### 🧮 Ejemplo de inyección de fragmento.
 ```html
