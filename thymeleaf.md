@@ -28,7 +28,7 @@ Si tienes un archivo `index.html` en `src/main/resources/templates`, y tu contro
 
 
 # 📌 Enlazando plantillas.
-Para enlazar plantillas de Thymeleaf unas con otras haremos uso del `href=""` de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.    
+Para enlazar plantillas de Thymeleaf unas con otras haremos uso del **`th:href=""`** parecido al **`href`** de HTML pero en lugar de referenciar un fichero con extension `.html` enlazaremos a una llamada a un recurso o endpoint del controlador.    
 **Ejemplo de llamada a otra plantilla**    
 ```html
 <ul>
