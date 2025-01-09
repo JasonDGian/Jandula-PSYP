@@ -96,8 +96,28 @@ La principal diferencia entre **insert** y **replace** es su comportamiento con 
 
 ## 📍 Introducir varios fragmentos mediante bucles.
 
+Es posible insertar de manera iterativa elementos en nuestras vistas. Para ello deberemos de utilizar la siguiente instruccion.   
+```html
+<div th:each="objeto : listaObjetos">
+   <!-- instrucciones para la iteracion -->
+</div>
+```
+   
+>[!NOTE]
+> La lista de objetos empleada para renderizar los elementos puede ser un modelo o un valor fijo.
+   
+#### 🧮 Ejemplo de inyecccion iterativa por listado en modelo.
+```html
+<div id="itemRow" th:each="serie : ${listadoSeries}">
+   <h5 class="tituloSerie">
+      <span th:text="${serie.titulo}"> Texto por defecto. </span>
+   </h5>
+   <p>
+      <span th:text="${serie.duracion}"> Duracion por defecto. </span>
+   </p>
+</div>
+```
 
----------- EN SUCIO.
 
 1º - Creamos el metodo fuente de informacion.
 ![imagen](https://github.com/user-attachments/assets/5ac8a974-340b-4d09-a820-eeaef0f47d45)
